@@ -1,7 +1,11 @@
 import { MantineProvider } from "@mantine/core";
-import { RouteObject, RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  RouteObject,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 import Content from "./components/Content";
-import Home from "./pages/Home";
+import Overview from "./pages/Overview/Overview";
 
 const routes: RouteObject[] = [
   {
@@ -10,18 +14,22 @@ const routes: RouteObject[] = [
     children: [
       {
         path: "/",
-        element: <Home />,
-      }
-    ]
-  }
-]
+        element: <Overview />,
+      },
+    ],
+  },
+];
 
 const router = createBrowserRouter(routes);
 
 export default function App() {
   return (
-    <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme: "dark" }}>
+    <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
+      theme={{ colorScheme: "dark", fontFamily: "Readex Pro, sans-serif" }}
+    >
       <RouterProvider router={router} />
     </MantineProvider>
-  )
+  );
 }
