@@ -1,34 +1,11 @@
 import { Box, Center, Image, Text, Title } from "@mantine/core";
+import BackgroundVideo from "../../../components/BackgroundVideo";
 
 export default function Home() {
   return (
     <Box pos={"absolute"} top={0}>
       <Box sx={{ position: "relative" }}>
-        <div
-          style={{
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            overflow: "hidden",
-          }}
-        >
-          <video
-            autoPlay={true}
-            loop
-            muted
-            style={{
-              filter: "blur(5px) brightness(50%)",
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              pointerEvents: "none",
-            }}
-          >
-            <source src="/trailer.mp4" type="video/mp4" />
-          </video>
-        </div>
-
+        <BackgroundVideo video="/home-bg.mp4" isHome={true} />
         <Box
           sx={{
             position: "absolute",
@@ -45,7 +22,8 @@ export default function Home() {
           </Center>
           <Title sx={{ margin: "2vh 0 2vh 0" }}>vSuS</Title>
           <Text>
-            Your deployable VM-like coding environments, access from anywhere.
+            Your deployable VM-like coding environments, accessible from
+            anywhere.
           </Text>
         </Box>
       </Box>
