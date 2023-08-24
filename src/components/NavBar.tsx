@@ -7,7 +7,7 @@ export default function NavBar() {
             <Container fluid sx={{ justifyContent: "space-between", alignItems: "center" }}>
                 <Group>
                     <Box display={"flex"}>
-                        <Image src={"https://vsus.app/logo.svg"} height={35} width={"auto"} /> &nbsp;&nbsp;
+                        <Image src={"/logo.svg"} height={35} width={"auto"} /> &nbsp;&nbsp;
                         <Title order={3}>vSuS</Title>
                     </Box>
                     <Text>Home</Text>
