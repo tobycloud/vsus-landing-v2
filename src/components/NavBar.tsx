@@ -1,5 +1,4 @@
 import {
-  Anchor,
   Box,
   Container,
   Group,
@@ -8,8 +7,10 @@ import {
   Title,
 } from "@mantine/core";
 import "/logo.svg";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
+  /** No need to use Anchor, use Link from React Router instead for full-SPA support. */
   return (
     <Header
       height={60}
@@ -21,18 +22,20 @@ export default function NavBar() {
         sx={{ justifyContent: "space-between", alignItems: "center" }}
       >
         <Group>
-          <Box display={"flex"}>
-            <Image src={"/logo.svg"} height={35} width={"auto"} /> &nbsp;&nbsp;
-            <Title order={3} color="white" sx={{ margin: "auto" }}>
-              vSuS
-            </Title>
-          </Box>
-          <Anchor href="/" underline={false} color="white">
-            Overview
-          </Anchor>
-          <Anchor href="/pricing" underline={false} color="white">
+          <Link to={"/"} style={{ color: "white", textDecoration: "none" }}>
+            <Box display={"flex"}>
+              <Image src={"/logo.svg"} height={35} width={"auto"} /> &nbsp;&nbsp;
+              <Title order={3} color="white" sx={{ margin: "auto" }}>
+                vSuS
+              </Title>
+            </Box>
+          </Link>
+          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+            Home
+          </Link>
+          <Link to="/pricing" style={{ color: "white", textDecoration: "none" }}>
             Pricing
-          </Anchor>
+          </Link>
         </Group>
       </Container>
     </Header>
