@@ -21,7 +21,7 @@ const BackgroundVideo = (props: Props) => {
         style={{
           objectFit: "cover",
           width: "100vw",
-          height: "100vh",
+          height: props.isHome ? "100vh" : "140vh",
           overflow: "hidden",
           filter: "blur(5px) brightness(50%)",
           pointerEvents: "none",
