@@ -32,7 +32,10 @@ export default function App() {
     <MantineProvider
       withGlobalStyles
       withNormalizeCSS
-      theme={{ colorScheme: "dark", fontFamily: "Readex Pro, sans-serif" }}
+      theme={{
+        colorScheme: "dark",
+        fontFamily: "Readex Pro, sans-serif",
+      }}
     >
       <RouterProvider router={router} />
     </MantineProvider>

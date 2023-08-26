@@ -31,7 +31,7 @@ const PlansBox: React.FC<Props> = ({ plan = "Basic" }) => {
     <div
       style={{
         width: "calc((100vw - 550px) / 3)",
-        minWidth: "350px",
+        minWidth: "390px",
         borderRadius: "20px",
         boxShadow: `0 0 12px 1px ${color}`,
         backgroundColor: "#001112",
@@ -43,7 +43,7 @@ const PlansBox: React.FC<Props> = ({ plan = "Basic" }) => {
           border: `2px solid ${color}`,
           borderRadius: "20px",
           backgroundImage: `linear-gradient(to bottom right, ${gradientStart}, #001112)`,
-          padding: "30px",
+          padding: "25px",
         }}
       >
         <h1 style={{ fontSize: "40px", fontWeight: "bold" }}>{plan}</h1>

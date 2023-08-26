@@ -1,50 +1,67 @@
 import { Box, Image, Text, Title, createStyles } from "@mantine/core";
-import Home from "./sections/Home";
+import Home from "./Home";
 
 const useStyles = createStyles((theme) => ({
   featureContainer: {
     [theme.fn.largerThan("md")]: {
-      display: "flex"
+      display: "flex",
+      alignItems: "center",
     },
     [theme.fn.smallerThan("md")]: {
-      display: "block"
-    }
+      display: "block",
+    },
+  },
+  reverse: {
+    [theme.fn.smallerThan("md")]: {
+      display: "flex",
+      flexDirection: "column-reverse",
+    },
   },
   featureImage: {
     "&:hover": {
       filter: "scale(1.5)",
     },
     transition: "transform .2s",
-  }
-}))
+  },
+}));
 
 const Overview = () => {
   const { classes } = useStyles();
+
   return (
     <>
       <Home />
-      <Box mt={"93vh"} pos={'relative'} m={20}>
-        <Title order={2} mb={15}>Features</Title>
+      <Box mt={"100vh"} pos={"relative"} m={20}>
         <Box className={classes.featureContainer}>
-          <Image className={classes.featureImage} src={"/feat-vsc.png"} fit="cover" />
-          <Box m={15}>
-            <Title order={3}>Integrated code editor</Title>
-            <Text>We intergated a code editor for you to code directly on our servers. Keep your PC always clean.</Text>
+          <Image
+            className={classes.featureImage}
+            src={"/image/feat-vsc.png"}
+            fit="cover"
+          />
+          <Box m={50}>
+            <Title order={2}>Integrated code editor</Title>
+            <Text>
+              Enhance your coding with our integrated editor. Code from
+              everywhere on our powerful servers with a smooth experience.
+            </Text>
           </Box>
         </Box>
-        <Box className={classes.featureContainer} mt={30}>
-          <Box m={15}>
-            <Title order={3}>User-friendly UI</Title>
-            <Text>We think an user-friendly UI is very important, so we tried to design a super beautiful UI, only for you xD.</Text>
+        <Box
+          className={`${classes.featureContainer} ${classes.reverse}`}
+          mt={30}
+        >
+          <Box m={50}>
+            <Title order={2}>Intuitive Interface</Title>
+            <Text>
+              We value a user-friendly interface, which is why we've crafted a
+              beautifully designed UI exclusively for you! 😊
+            </Text>
           </Box>
-          <Image className={classes.featureImage} src={"/feat-ui.png"} fit="cover" />
-        </Box>
-        <Box className={classes.featureContainer} mt={30}>
-          <Image className={classes.featureImage} src={"/feat-vsc.png"} fit="cover" />
-          <Box m={15}>
-            <Title order={3}>Something</Title>
-            <Text>I don't know what to put in this section :\.</Text>
-          </Box>
+          <Image
+            className={classes.featureImage}
+            src={"/image/feat-ui.png"}
+            fit="cover"
+          />
         </Box>
       </Box>
     </>
