@@ -1,9 +1,11 @@
 table {
   border-spacing: 10px;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
 }
 
 td {
   padding: 10px;
   border-radius: 8px;
-  background-color: #22222250;
+  background-color: #00000050;
 }

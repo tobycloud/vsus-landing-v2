@@ -23,6 +23,27 @@ export default function Pricing() {
           <PlansBox plan="God" />
         </SimpleGrid>
       </Center>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Title mt={"8vh"} order={1}>
+          Included in all plans
+        </Title>
+        <table>
+          <tr>
+            <td>Universal Web Code Editor ✓</td>
+            <td>Professional Notes Organizer ✓</td>
+          </tr>
+          <tr>
+            <td>Always-On™️ ✓</td>
+            <td>Real-time Collaboration ✓</td>
+          </tr>
+        </table>
+      </Box>
     </Box>
   );
 }
