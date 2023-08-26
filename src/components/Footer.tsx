@@ -1,9 +1,21 @@
-import { Box, Container, Text } from "@mantine/core";
+import { Box, Container, Text, createStyles } from "@mantine/core";
+
+const useStyles = createStyles((theme) => ({
+  footerInside: {
+    display: "flex",
+    [theme.fn.smallerThan("md")]: {
+      fontSize: "0.9rem",
+      flexDirection: "column",
+      alignItems: "center",
+    },
+  },
+}));
 
 export default function Footer() {
+  const { classes } = useStyles();
   return (
-    <footer style={{ backgroundColor: "#1b2029" }}>
-      <Box display={"flex"} p={20}>
+    <footer style={{ backgroundColor: "#010409" }}>
+      <Box className={classes.footerInside} p={20}>
         <Container>
           <Text>
             Copyright © {new Date().getFullYear()} DaCloud™. All rights

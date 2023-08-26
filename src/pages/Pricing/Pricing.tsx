@@ -8,7 +8,7 @@ export default function Pricing() {
     document.title = "Pricing - vSuS";
   }, []);
   return (
-    <Box mb={35}>
+    <Box>
       <Title order={1} style={{ textAlign: "center" }} mt={30} mb={30}>
         Pricing
       </Title>
@@ -35,12 +35,12 @@ export default function Pricing() {
         </Title>
         <table>
           <tr>
-            <td>Universal Web Code Editor ✓</td>
-            <td>Professional Notes Organizer ✓</td>
+            <td>Universal Web Code Editor</td>
+            <td>Professional Notes Organizer</td>
           </tr>
           <tr>
-            <td>Always-On™️ ✓</td>
-            <td>Real-time Collaboration ✓</td>
+            <td>Always-On™️</td>
+            <td>Real-time Collaboration</td>
           </tr>
         </table>
       </Box>
