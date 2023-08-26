@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . /app
 
-CMD ["vite", "preview", "--port", "80"]
+CMD ["npx", "vite", "preview", "--port", "80"]
 
 EXPOSE 80
