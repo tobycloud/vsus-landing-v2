@@ -3,6 +3,8 @@ import Home from "./Home";
 
 const useStyles = createStyles((theme) => ({
   featureContainer: {
+    marginTop: 30,
+    marginBottom: 30,
     [theme.fn.largerThan("md")]: {
       display: "flex",
       alignItems: "center",
@@ -35,7 +37,7 @@ const Overview = () => {
         <Box className={classes.featureContainer}>
           <Image
             className={classes.featureImage}
-            src={"/image/feat-vsc.png"}
+            src={"/image/feat/vsc.png"}
             fit="cover"
           />
           <Box m={50}>
@@ -46,10 +48,7 @@ const Overview = () => {
             </Text>
           </Box>
         </Box>
-        <Box
-          className={`${classes.featureContainer} ${classes.reverse}`}
-          mt={30}
-        >
+        <Box className={`${classes.featureContainer} ${classes.reverse}`}>
           <Box m={50}>
             <Title order={2}>Intuitive Interface</Title>
             <Text>
@@ -59,9 +58,25 @@ const Overview = () => {
           </Box>
           <Image
             className={classes.featureImage}
-            src={"/image/feat-ui.png"}
+            src={"/image/feat/ui.png"}
             fit="cover"
           />
+        </Box>
+        <Box className={classes.featureContainer}>
+          <Image
+            className={classes.featureImage}
+            src={"/image/feat/discordrpc.png"}
+            fit="cover"
+          />
+          <Box m={50}>
+            <Title order={2}>Discord Rich Presence</Title>
+            <Text>
+              Elevate your app experience with our built-in Discord Rich
+              Presence feature, no extensions required - now you can
+              effortlessly show off your activities to friends on Discord while
+              using vSuS 😎
+            </Text>
+          </Box>
         </Box>
       </Box>
     </>
