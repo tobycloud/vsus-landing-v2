@@ -1,4 +1,4 @@
-FROM node as build
+FROM node
 
 WORKDIR /app
 
@@ -8,10 +8,6 @@ RUN npm install
 
 COPY . /app
 
-RUN ["npm", "run", "build"]
-
-FROM nginx
-
-COPY --from=build /app/dist /usr/share/nginx/html
+CMD ["vite", "preview", "--port", "80"]
 
 EXPOSE 80
