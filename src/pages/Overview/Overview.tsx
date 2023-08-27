@@ -74,7 +74,7 @@ const Overview = () => {
               Elevate your app experience with our built-in Discord Rich
               Presence feature, no extensions required - now you can
               effortlessly show off your activities to friends on Discord while
-              using vSuS 😎
+              using vSuS. 😎
             </Text>
           </Box>
         </Box>
