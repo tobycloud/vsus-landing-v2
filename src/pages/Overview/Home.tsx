@@ -20,9 +20,10 @@ const useStyles = createStyles((theme) => ({
     borderRadius: "12px",
     textDecoration: "none",
     margin: "1vh",
+    maxWidth: "220px",
   },
-  download: { backgroundColor: "white", color: "black", maxWidth: "120px" },
-  web: { backgroundColor: "#010409", color: "white", maxWidth: "220px" },
+  download: { backgroundColor: "white", color: "black" },
+  web: { backgroundColor: "#010409", color: "white" },
 }));
 
 export default function Home() {
