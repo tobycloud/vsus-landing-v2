@@ -1,6 +1,7 @@
 import { Box, Container, Group, Header, Image, Title } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import os from "../os";
 
 export default function NavBar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -57,9 +58,11 @@ export default function NavBar() {
           <Link to="/" style={{ color: "white", textDecoration: "none" }}>
             Home
           </Link>
-          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
-            Download
-          </Link>
+          {!!os && (
+            <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+              Download
+            </Link>
+          )}
           <Link
             to="/pricing"
             style={{ color: "white", textDecoration: "none" }}

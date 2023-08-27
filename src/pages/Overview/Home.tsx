@@ -2,6 +2,7 @@ import { Box, Center, Image, Text, Title, createStyles } from "@mantine/core";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import BackgroundVideo from "../../components/BackgroundVideo";
+import os from "../../os";
 
 const useStyles = createStyles((theme) => ({
   buttons: {
@@ -21,7 +22,7 @@ const useStyles = createStyles((theme) => ({
     margin: "1vh",
   },
   download: { backgroundColor: "white", color: "black", maxWidth: "120px" },
-  web: { backgroundColor: "black", color: "white", maxWidth: "220px" },
+  web: { backgroundColor: "#010409", color: "white", maxWidth: "220px" },
 }));
 
 export default function Home() {
@@ -29,6 +30,8 @@ export default function Home() {
   useEffect(() => {
     document.title = "Home - vSuS";
   }, []);
+  let showWeb;
+  !!os ? (showWeb = true) : (showWeb = false);
   return (
     <Box pos={"absolute"} top={0}>
       <Box sx={{ position: "relative" }}>
@@ -53,15 +56,22 @@ export default function Home() {
             everywhere.
           </Text>
           <Box className={classes.buttons}>
-            <Link
-              to={"https://dashboard.vsus.app"}
-              className={`${classes.button} ${classes.web}`}
-            >
-              Open in your browser
-            </Link>
-            <Link to={"/"} className={`${classes.button} ${classes.download}`}>
-              Download
-            </Link>
+            {showWeb && (
+              <Link
+                to={"https://dashboard.vsus.app"}
+                className={`${classes.button} ${classes.web}`}
+              >
+                Open in your browser
+              </Link>
+            )}
+            {!!os && (
+              <Link
+                to={"/"}
+                className={`${classes.button} ${classes.download}`}
+              >
+                Download for {os}
+              </Link>
+            )}
           </Box>
         </Box>
       </Box>
