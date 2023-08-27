@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'vps4'
+        label 'docker'
     }
     stages {
         stage('Checkout') {
