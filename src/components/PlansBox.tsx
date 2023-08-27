@@ -1,4 +1,5 @@
 import React from "react";
+import "./plansBox.css";
 
 type PlanType = "Basic" | "Pro" | "God";
 
@@ -30,51 +31,43 @@ const PlansBox: React.FC<Props> = ({ plan = "Basic" }) => {
   return (
     <div
       style={{
-        width: "calc((100vw - 550px) / 3)",
-        minWidth: "390px",
-        borderRadius: "20px",
         boxShadow: `0 0 12px 1px ${color}`,
-        backgroundColor: "#001112",
       }}
+      className="outer"
     >
       <div
         style={{
           color: fontColor,
           border: `2px solid ${color}`,
-          borderRadius: "20px",
           backgroundImage: `linear-gradient(to bottom right, ${gradientStart}, #001112)`,
-          padding: "25px",
         }}
+        className="inner"
       >
-        <h1 style={{ fontSize: "40px", fontWeight: "bold" }}>{plan}</h1>
-        <p style={{ fontSize: "20px" }}>
+        <h1 className="planTitle">{plan}</h1>
+        <p className="planName">
           {plan === "Basic"
             ? "The basics to get you started"
             : plan === "Pro"
             ? "For organizations and teams"
             : "For gods and goddesses (for real)"}
         </p>
-        <div style={{ height: "200px" }}>
+        <div className="priceHeight">
           {plan !== "Basic" ? (
             <>
               <div style={{ display: "flex", alignItems: "center" }}>
-                <span style={{ fontSize: "25px" }}>$</span>
-                <span style={{ fontSize: "50px", fontWeight: "bold" }}>
-                  {priceMonthly}
-                </span>
-                <span style={{ fontSize: "25px" }}>/month</span>
+                <span className="priceNormal">$</span>
+                <span className="priceNumber">{priceMonthly}</span>
+                <span className="priceNormal">/month</span>
               </div>
               <p style={{ fontSize: "20px", margin: "0" }}>or</p>
               <div style={{ display: "flex", alignItems: "center" }}>
-                <span style={{ fontSize: "25px" }}>$</span>
-                <span style={{ fontSize: "50px", fontWeight: "bold" }}>
-                  {priceYearly}
-                </span>
-                <span style={{ fontSize: "25px" }}>/year</span>
+                <span className="priceNormal">$</span>
+                <span className="priceNumber">{priceYearly}</span>
+                <span className="priceNormal">/year</span>
               </div>
             </>
           ) : (
-            <span style={{ fontSize: "50px", fontWeight: "bold" }}>Free</span>
+            <span className="priceNumber">Free</span>
           )}
         </div>
         <div>

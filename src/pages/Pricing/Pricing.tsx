@@ -30,7 +30,7 @@ export default function Pricing() {
           alignItems: "center",
         }}
       >
-        <Title mt={"8vh"} order={1}>
+        <Title mt={"8vh"} order={1} sx={{ textAlign: "center" }}>
           Included in all plans
         </Title>
         <table>
