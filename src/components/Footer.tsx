@@ -7,6 +7,7 @@ const useStyles = createStyles((theme) => ({
       fontSize: "0.9rem",
       flexDirection: "column",
       alignItems: "center",
+      textAlign: "center",
     },
   },
 }));
