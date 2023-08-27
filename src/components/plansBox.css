@@ -1,0 +1,62 @@
+.outer {
+  width: calc((100vw - 550px) / 3);
+  min-width: 380px;
+  border-radius: 20px;
+}
+
+.inner {
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.planTitle {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.planName {
+  font-size: 20px;
+}
+
+.priceNormal {
+  font-size: 25px;
+}
+
+.priceNumber {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.priceHeight {
+  height: 200px;
+}
+
+@media only screen and (max-width: 410px) {
+  .outer {
+    min-width: 310px;
+  }
+
+  .inner {
+    padding: 20px;
+  }
+
+  .planTitle {
+    font-size: 30px;
+  }
+
+  .planName {
+    font-size: 15px;
+  }
+
+  .priceHeight {
+    height: 170px;
+  }
+
+  .priceNormal {
+    font-size: 20px;
+  }
+
+  .priceNumber {
+    font-size: 40px;
+  }
+}
