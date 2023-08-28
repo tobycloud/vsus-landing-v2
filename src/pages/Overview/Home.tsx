@@ -32,7 +32,7 @@ export default function Home() {
     document.title = "Home - vSuS";
   }, []);
   let showWeb;
-  !!os ? (showWeb = true) : (showWeb = false);
+  ["Windows", "Mac", "Linux"].includes(os) ? (showWeb = true) : (showWeb = false);
   return (
     <Box pos={"absolute"} top={0}>
       <Box sx={{ position: "relative" }}>
