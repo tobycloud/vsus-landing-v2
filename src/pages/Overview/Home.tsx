@@ -31,8 +31,7 @@ export default function Home() {
   useEffect(() => {
     document.title = "Home - vSuS";
   }, []);
-  let showWeb;
-  ["Windows", "Mac", "Linux"].includes(os) ? (showWeb = true) : (showWeb = false);
+  let showWeb = ["Windows", "Mac", "Linux"].includes(os);
   return (
     <Box pos={"absolute"} top={0}>
       <Box sx={{ position: "relative" }}>
