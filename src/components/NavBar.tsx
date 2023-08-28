@@ -59,7 +59,10 @@ export default function NavBar() {
             Home
           </Link>
           {!!os && (
-            <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+            <Link
+              to="/download"
+              style={{ color: "white", textDecoration: "none" }}
+            >
               Download
             </Link>
           )}

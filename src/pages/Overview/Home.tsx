@@ -20,7 +20,7 @@ const useStyles = createStyles((theme) => ({
     borderRadius: "12px",
     textDecoration: "none",
     margin: "1vh",
-    maxWidth: "220px",
+    minWidth: 220,
   },
   download: { backgroundColor: "white", color: "black" },
   web: { backgroundColor: "#010409", color: "white" },
@@ -65,7 +65,7 @@ export default function Home() {
                 Open in your browser
               </Link>
             )}
-            {!!os && (
+            {!!os && os !== "Mac" && (
               <Link
                 to={"/"}
                 className={`${classes.button} ${classes.download}`}

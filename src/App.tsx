@@ -5,6 +5,7 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import Content from "./components/Content";
+import Download from "./pages/Download/Download";
 import Overview from "./pages/Overview/Overview";
 import Pricing from "./pages/Pricing/Pricing";
 
@@ -20,6 +21,10 @@ const routes: RouteObject[] = [
       {
         path: "/pricing",
         element: <Pricing />,
+      },
+      {
+        path: "/download",
+        element: <Download />,
       },
     ],
   },
