@@ -8,6 +8,7 @@ import Content from "./components/Content";
 import Download from "./pages/Download/Download";
 import Overview from "./pages/Overview/Overview";
 import Pricing from "./pages/Pricing/Pricing";
+import Error404 from "./pages/404/Error404";
 
 const routes: RouteObject[] = [
   {
@@ -26,6 +27,10 @@ const routes: RouteObject[] = [
         path: "/download",
         element: <Download />,
       },
+      {
+        path: "*",
+        element: <Error404 />
+      }
     ],
   },
 ];

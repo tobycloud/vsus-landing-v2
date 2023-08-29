@@ -1,6 +1,5 @@
 interface Props {
   video: string;
-  isHome: boolean;
 }
 
 const BackgroundVideo = (props: Props) => {
@@ -10,18 +9,19 @@ const BackgroundVideo = (props: Props) => {
         top: "-50%",
         left: "-50%",
         width: "100vw",
-        height: props.isHome ? "100vh" : "140vh",
+        height: "100vh",
         overflow: "hidden",
       }}
     >
       <video
+        playsInline
         autoPlay={true}
         loop
         muted
         style={{
           objectFit: "cover",
           width: "100vw",
-          height: props.isHome ? "100vh" : "140vh",
+          height: "100vh",
           overflow: "hidden",
           filter: "blur(5px) brightness(50%)",
           pointerEvents: "none",

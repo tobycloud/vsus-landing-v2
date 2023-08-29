@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <Box pos={"absolute"} top={0}>
       <Box sx={{ position: "relative" }}>
-        <BackgroundVideo video="/video/home-bg.mp4" isHome={true} />
+        <BackgroundVideo video="/video/home-bg.mp4" />
         <Box
           sx={{
             position: "absolute",

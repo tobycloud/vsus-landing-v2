@@ -9,7 +9,13 @@ export default function Pricing() {
   }, []);
   return (
     <Box>
-      <Title order={1} style={{ textAlign: "center" }} mt={30} mb={30}>
+      <Title
+        order={1}
+        style={{ textAlign: "center" }}
+        size={50}
+        mt={50}
+        mb={50}
+      >
         Pricing
       </Title>
       <Center>
