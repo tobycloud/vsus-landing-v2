@@ -31,7 +31,6 @@ export default function Home() {
   useEffect(() => {
     document.title = "Home - vSuS";
   }, []);
-  let showWeb = ["Windows", "Mac", "Linux"].includes(os);
   return (
     <Box pos={"absolute"} top={0}>
       <Box sx={{ position: "relative" }}>
@@ -56,7 +55,7 @@ export default function Home() {
             everywhere.
           </Text>
           <Box className={classes.buttons}>
-            {showWeb && (
+            {os !== "" && (
               <Link
                 to={"https://dashboard.vsus.app"}
                 className={`${classes.button} ${classes.web}`}
@@ -64,7 +63,7 @@ export default function Home() {
                 Open in your browser
               </Link>
             )}
-            {!!os && os !== "Mac" && (
+            {!["", "Mac", "Chrome OS"].includes(os) && (
               <Link
                 to={"/"}
                 className={`${classes.button} ${classes.download}`}

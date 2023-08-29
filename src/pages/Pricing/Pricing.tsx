@@ -39,7 +39,7 @@ export default function Pricing() {
             <td>Professional Notes Organizer</td>
           </tr>
           <tr>
-            <td>Always-On™️</td>
+            <td>Always-On™</td>
             <td>Real-time Collaboration</td>
           </tr>
         </table>
