@@ -10,7 +10,7 @@ export default function NavBar() {
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
 
-    setVisible(prevScrollPos > currentScrollPos);
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
     setPrevScrollPos(currentScrollPos);
   };
 
