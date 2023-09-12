@@ -5,10 +5,12 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import Content from "./components/Content";
+import Error404 from "./pages/404/Error404";
+import PrivacyPolicy from "./pages/Documents/PrivacyPolicy";
+import TermsOfService from "./pages/Documents/TermsOfService";
 import Download from "./pages/Download/Download";
 import Overview from "./pages/Overview/Overview";
 import Pricing from "./pages/Pricing/Pricing";
-import Error404 from "./pages/404/Error404";
 
 const routes: RouteObject[] = [
   {
@@ -28,9 +30,17 @@ const routes: RouteObject[] = [
         element: <Download />,
       },
       {
+        path: "/privacy",
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: "/tos",
+        element: <TermsOfService />,
+      },
+      {
         path: "*",
-        element: <Error404 />
-      }
+        element: <Error404 />,
+      },
     ],
   },
 ];

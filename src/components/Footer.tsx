@@ -1,5 +1,6 @@
 import { Box, Container, Text, createStyles } from "@mantine/core";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const useStyles = createStyles((theme) => ({
   footerInside: {
@@ -32,7 +33,18 @@ export default function Footer() {
         </Container>
         {height <= 990 && <br />}
         <Container>
-          <Text>Privacy Policy | Terms of Service | Legal</Text>
+          <Text>
+            <Link
+              to="/privacy"
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              Privacy Policy
+            </Link>{" "}
+            |{" "}
+            <Link to="/tos" style={{ color: "white", textDecoration: "none" }}>
+              Terms of Service
+            </Link>{" "}
+          </Text>
         </Container>
       </Box>
     </footer>
