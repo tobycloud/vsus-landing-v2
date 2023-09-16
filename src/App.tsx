@@ -6,8 +6,7 @@ import {
 } from "react-router-dom";
 import Content from "./components/Content";
 import Error404 from "./pages/404/Error404";
-import PrivacyPolicy from "./pages/Documents/PrivacyPolicy";
-import TermsOfService from "./pages/Documents/TermsOfService";
+import Document from "./pages/Documents/Document";
 import Download from "./pages/Download/Download";
 import Overview from "./pages/Overview/Overview";
 import Pricing from "./pages/Pricing/Pricing";
@@ -31,11 +30,11 @@ const routes: RouteObject[] = [
       },
       {
         path: "/privacy",
-        element: <PrivacyPolicy />,
+        element: <Document title="privacy" />,
       },
       {
         path: "/tos",
-        element: <TermsOfService />,
+        element: <Document title="tos" />,
       },
       {
         path: "*",
