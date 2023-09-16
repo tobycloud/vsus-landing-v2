@@ -3,6 +3,7 @@ import {
   RouteObject,
   RouterProvider,
   createBrowserRouter,
+  redirect,
 } from "react-router-dom";
 import Content from "./components/Content";
 import Error404 from "./pages/404/Error404";
@@ -36,6 +37,12 @@ const routes: RouteObject[] = [
       {
         path: "/tos",
         element: <TermsOfService />,
+      },
+      {
+        path: '/discord',
+        handle: () => {
+          redirect("https://discord.gg/3KdcudZvgH");
+        }
       },
       {
         path: "*",
