@@ -170,11 +170,11 @@ export default function Pricing() {
         </Title>
         <Text style={{ marginTop: 20 }}>
           By installing and using vSuS, you agree to our{" "}
-          <Link to="" className={classes.link}>
+          <Link to="/tos" className={classes.link}>
             Terms of Service
           </Link>{" "}
           and{" "}
-          <Link to="" className={classes.link}>
+          <Link to="/privacy" className={classes.link}>
             Privacy Policy
           </Link>
           .

@@ -74,12 +74,12 @@ const PlansBox: React.FC<Props> = ({ plan = "Basic" }) => {
           <p>{`${plan === "Basic" ? "1" : plan === "Pro" ? "4" : "12"} vCPU${
             plan !== "Basic" ? "s" : ""
           }`}</p>
-          <p>{`${plan === "Basic" ? "2" : plan === "Pro" ? "8" : "32"} vRAM${
-            plan !== "Basic" ? "s" : ""
-          }`}</p>
+          <p>{`${
+            plan === "Basic" ? "2" : plan === "Pro" ? "8" : "32"
+          } vRAMs`}</p>
           <p>{`${
             plan === "Basic" ? "5" : plan === "Pro" ? "20" : "60"
-          } Package${plan !== "Basic" ? "s" : ""}`}</p>
+          } Packages`}</p>
           <p>{`${
             plan === "Basic" ? "1" : plan === "Pro" ? "2" : "4"
           } CI/CD Job${plan !== "Basic" ? "s" : ""}`}</p>

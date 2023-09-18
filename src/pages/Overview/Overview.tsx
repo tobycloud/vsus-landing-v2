@@ -50,10 +50,12 @@ const Overview = () => {
         </Box>
         <Box className={`${classes.featureContainer} ${classes.reverse}`}>
           <Box m={50}>
-            <Title order={2}>Intuitive Interface</Title>
+            <Title order={2}>Bound Together in Unity</Title>
             <Text>
-              We value a user-friendly interface, which is why we've crafted a
-              beautifully designed UI exclusively for you! 😊
+              vSuS isn’t just an app; it’s a friendly community where people
+              come together. It’s a place where you can find support, make
+              companions, and share experiences, all while helping each other
+              grow and thrive.
             </Text>
           </Box>
           <Image
@@ -74,7 +76,7 @@ const Overview = () => {
               Elevate your app experience with our built-in Discord Rich
               Presence feature, no extensions required - now you can
               effortlessly show off your activities to friends on Discord while
-              using vSuS. 😎
+              using vSuS.
             </Text>
           </Box>
         </Box>

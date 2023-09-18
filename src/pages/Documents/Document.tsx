@@ -11,7 +11,6 @@ const useStyles = createStyles(() => ({
     marginTop: "30px",
     marginBottom: "5vh",
     width: "99%",
-    fontSize: "1rem",
   },
 }));
 
