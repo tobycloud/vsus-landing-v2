@@ -43,6 +43,7 @@ export default function Pricing() {
           <tr>
             <td>Universal Web Code Editor</td>
             <td>Professional Notes Organizer</td>
+            <td>Private Git Server (coming soon)</td>
           </tr>
           <tr>
             <td>Always-On™</td>
