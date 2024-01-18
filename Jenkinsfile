@@ -12,8 +12,8 @@ pipeline {
         stage('Build and push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.tobycm.systems/', 'TobyRegistry') {
-                        def dockerImage = docker.build("registry.tobycm.systems/vsus-landing-v2", "-f Dockerfile .")
+                    docker.withRegistry('https://registry.tobycm.dev/', 'TobyRegistry') {
+                        def dockerImage = docker.build("registry.tobycm.dev/vsus-landing-v2", "-f Dockerfile .")
                         dockerImage.push()
                     }
                 }
