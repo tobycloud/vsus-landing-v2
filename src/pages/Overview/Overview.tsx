@@ -80,6 +80,7 @@ const Overview = () => {
             </Text>
           </Box>
         </Box>
+        {/**
         <Box className={`${classes.featureContainer} ${classes.reverse}`}>
           <Box m={50}>
             <Title order={2}>DaCloud Happy New Year</Title>
@@ -95,6 +96,7 @@ const Overview = () => {
             fit="cover"
           />
         </Box>
+        */}
       </Box>
     </>
   );
