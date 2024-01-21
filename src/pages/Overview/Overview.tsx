@@ -80,6 +80,21 @@ const Overview = () => {
             </Text>
           </Box>
         </Box>
+        <Box className={`${classes.featureContainer} ${classes.reverse}`}>
+          <Box m={50}>
+            <Title order={2}>DaCloud Happy New Year</Title>
+            <Text>
+              Us had past 2023, and we’re still here! So happy new year! Welcome
+              to DaCloud. We’re glad you joined us. And us in time prepare for
+              DaCloud birthday in February. So what are you waiting for?
+            </Text>
+          </Box>{" "}
+          <Image
+            className={classes.featureImage}
+            src={"/video/dragon-2024.gif"}
+            fit="cover"
+          />
+        </Box>
       </Box>
     </>
   );
