@@ -9,21 +9,11 @@ export default function Pricing() {
   }, []);
   return (
     <Box>
-      <Title
-        order={1}
-        style={{ textAlign: "center" }}
-        size={50}
-        mt={50}
-        mb={50}
-      >
+      <Title order={1} style={{ textAlign: "center" }} size={50} mt={50} mb={50}>
         Pricing
       </Title>
       <Center>
-        <SimpleGrid
-          cols={3}
-          spacing={"xl"}
-          breakpoints={[{ maxWidth: "80em", cols: 1, spacing: "md" }]}
-        >
+        <SimpleGrid cols={3} spacing={"xl"} breakpoints={[{ maxWidth: "80em", cols: 1, spacing: "md" }]}>
           <PlansBox plan="Basic" />
           <PlansBox plan="Pro" />
           <PlansBox plan="God" />

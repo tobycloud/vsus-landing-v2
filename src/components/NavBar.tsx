@@ -1,4 +1,4 @@
-import { Box, Container, Group, Header, Image, Title } from "@mantine/core";
+import { Box, Container, Group, Image, Title } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import os from "../os";
@@ -23,57 +23,34 @@ export default function NavBar() {
   }, [prevScrollPos]);
 
   return (
-    <Header
-      height={60}
+    <Container
+      hidden={!visible}
+      fluid
       sx={{
-        borderBottom: 0,
-        backgroundColor: "#00000050",
-        padding: 15,
-        transition: "transform 0.25s ease-in-out",
-        transform: visible ? "translateY(0)" : "translateY(-100%)",
+        justifyContent: "space-between",
+        alignItems: "center",
+        userSelect: "none",
       }}
-      pos={"sticky"}
     >
-      <Container
-        fluid
-        sx={{
-          justifyContent: "space-between",
-          alignItems: "center",
-          userSelect: "none",
-        }}
-      >
-        <Group>
-          <Box display={"flex"}>
-            <Image
-              src={"/image/logo.svg"}
-              height={35}
-              width={"auto"}
-              mr={10}
-              sx={{ pointerEvents: "none" }}
-            />
-            <Title order={3} color="white" sx={{ margin: "auto" }}>
-              vSuS
-            </Title>
-          </Box>
-          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
-            Home
+      <Group>
+        <Box display={"flex"}>
+          <Image src={"/image/logo.svg"} height={35} width={"auto"} mr={10} sx={{ pointerEvents: "none" }} />
+          <Title order={3} color="white" sx={{ margin: "auto" }}>
+            vSuS
+          </Title>
+        </Box>
+        <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+          Home
+        </Link>
+        {!!os && (
+          <Link to="/download" style={{ color: "white", textDecoration: "none" }}>
+            Download
           </Link>
-          {!!os && (
-            <Link
-              to="/download"
-              style={{ color: "white", textDecoration: "none" }}
-            >
-              Download
-            </Link>
-          )}
-          <Link
-            to="/pricing"
-            style={{ color: "white", textDecoration: "none" }}
-          >
-            Pricing
-          </Link>
-        </Group>
-      </Container>
-    </Header>
+        )}
+        <Link to="/pricing" style={{ color: "white", textDecoration: "none" }}>
+          Pricing
+        </Link>
+      </Group>
+    </Container>
   );
 }

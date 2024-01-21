@@ -1,9 +1,5 @@
 import { MantineProvider } from "@mantine/core";
-import {
-  RouteObject,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { RouteObject, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Content from "./components/Content";
 import Error404 from "./pages/404/Error404";
 import Document from "./pages/Documents/Document";
@@ -49,10 +45,8 @@ const router = createBrowserRouter(routes);
 export default function App() {
   return (
     <MantineProvider
-      withGlobalStyles
-      withNormalizeCSS
+      defaultColorScheme="dark"
       theme={{
-        colorScheme: "dark",
         fontFamily: "Readex Pro, sans-serif",
       }}
     >
