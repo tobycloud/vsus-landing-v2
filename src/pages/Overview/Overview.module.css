@@ -1,24 +1,31 @@
 .featureContainer {
+  display: block;
   margin-top: 30px;
   margin-bottom: 30px;
 
-  @media screen (max-width: $mantine-breakpoint-md) {
+  @media screen and (min-width: $mantine-breakpoint-md) {
     display: flex;
     align-items: center;
   }
-  display: block;
 }
 
 .reverse {
-  @media screen (max-width: $mantine-breakpoint-md) {
+  @media screen and (max-width: $mantine-breakpoint-md) {
     display: flex;
     flex-direction: column-reverse;
   }
 }
 
 .featureImage {
+  width: 50%;
+  margin: 20px;
   &:hover {
     filter: scale(1.5);
   }
   transition: transform 0.2s;
+
+  @media screen and (max-width: $mantine-breakpoint-md) {
+    width: 100%;
+    margin: 0;
+  }
 }

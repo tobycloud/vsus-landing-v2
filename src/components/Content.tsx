@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 
 export default function Content() {
   return (
-    <Box sx={{ color: "white" }} className={classes.wrapper}>
+    <Box style={{ color: "white" }} className={classes.wrapper}>
       <NavBar />
       <Outlet />
       <Box>

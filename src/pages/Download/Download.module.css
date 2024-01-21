@@ -15,7 +15,7 @@
   justify-content: left;
   align-items: center;
 
-  @media screen and (min-width: $mantine-breakpoint-md) {
+  @media screen and (max-width: $mantine-breakpoint-md) {
     flex-direction: column;
     width: auto;
   }
@@ -30,15 +30,14 @@
 .downloadContainerMain {
   display: flex;
   flex-direction: column;
+  margin-left: 50px;
+  margin-right: 0;
 
-  @media screen and (min-width: $mantine-breakpoint-md) {
+  @media screen and (max-width: $mantine-breakpoint-md) {
     align-items: center;
     margin-left: 0;
     text-align: center;
   }
-
-  margin-left: 50px;
-  margin-right: 0;
 }
 
 .twoButtons {
@@ -46,7 +45,7 @@
   margin: 0;
   padding: 0;
 
-  @media screen and (min-width: $mantine-breakpoint-md) {
+  @media screen and (max-width: $mantine-breakpoint-md) {
     flex-direction: column;
     align-items: center;
   }

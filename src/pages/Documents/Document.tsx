@@ -1,6 +1,5 @@
 import { Container } from "@mantine/core";
 import { useEffect, useState } from "react";
-import classes from "./Document.module.css";
 
 interface Props {
   title: string;
@@ -10,9 +9,16 @@ export default function Document(props: Props) {
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    document.title = props.title === "privacy" ? "Privacy Policy - vSuS" : "Terms of Service - vSuS";
+    document.title =
+      props.title === "privacy"
+        ? "Privacy Policy - vSuS"
+        : "Terms of Service - vSuS";
 
-    fetch(props.title === "privacy" ? "/documents/privacy_policy.html" : "/documents/terms_of_service.html")
+    fetch(
+      props.title === "privacy"
+        ? "/documents/privacy_policy.html"
+        : "/documents/terms_of_service.html"
+    )
       .then((response) => response.text())
       .then((data) => setHtmlContent(data))
       .catch(console.error);
@@ -21,11 +27,12 @@ export default function Document(props: Props) {
   }, [props.title]);
 
   return (
-    <Container className={classes.main}>
+    <Container>
       <div
         dangerouslySetInnerHTML={{
           __html: htmlContent,
         }}
+        style={{ marginTop: "5vh", textAlign: "left", width: "99%" }}
       />
     </Container>
   );

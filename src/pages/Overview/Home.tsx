@@ -11,10 +11,10 @@ export default function Home() {
   }, []);
   return (
     <Box pos={"absolute"} top={0}>
-      <Box sx={{ position: "relative" }}>
+      <Box style={{ position: "relative" }}>
         <BackgroundVideo video="/video/home-bg.mp4" />
         <Box
-          sx={{
+          style={{
             position: "absolute",
             top: "50%",
             left: "50%",
@@ -25,18 +25,27 @@ export default function Home() {
           }}
         >
           <Center>
-            <Image src={"/image/logo.svg"} height={"10vh"} width={"auto"} />
+            <Image src={"/image/logo.svg"} height={"100"} width={"auto"} />
           </Center>
-          <Title sx={{ margin: "2vh 0 2vh 0" }}>vSuS</Title>
-          <Text sx={{ margin: "0 0 5vh 0" }}>Your deployable VM-like coding environments, accessible from everywhere.</Text>
+          <Title style={{ margin: "2vh 0 2vh 0" }}>vSuS</Title>
+          <Text style={{ margin: "0 0 5vh 0" }}>
+            Your deployable VM-like coding environments, accessible from
+            everywhere.
+          </Text>
           <Box className={classes.buttons}>
             {os !== "" && (
-              <Link to={"https://dashboard.vsus.app"} className={`${classes.button} ${classes.web}`}>
+              <Link
+                to={"https://dashboard.vsus.app"}
+                className={`${classes.button} ${classes.web}`}
+              >
                 Open in your browser
               </Link>
             )}
             {!["", "Mac", "Chrome OS"].includes(os) && (
-              <Link to={"/"} className={`${classes.button} ${classes.download}`}>
+              <Link
+                to={"/"}
+                className={`${classes.button} ${classes.download}`}
+              >
                 Download for {os}
               </Link>
             )}

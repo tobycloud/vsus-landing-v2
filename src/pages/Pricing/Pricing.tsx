@@ -1,5 +1,6 @@
 import { Box, Center, SimpleGrid, Title } from "@mantine/core";
 import { useEffect } from "react";
+import AllPlansBox from "../../components/AllPlansBox";
 import PlansBox from "../../components/PlansBox";
 import "./style.css";
 
@@ -9,27 +10,40 @@ export default function Pricing() {
   }, []);
   return (
     <Box>
-      <Title order={1} style={{ textAlign: "center" }} size={50} mt={50} mb={50}>
+      <Title
+        order={1}
+        style={{ textAlign: "center" }}
+        size={50}
+        mt={50}
+        mb={50}
+      >
         Pricing
       </Title>
       <Center>
-        <SimpleGrid cols={3} spacing={"xl"} breakpoints={[{ maxWidth: "80em", cols: 1, spacing: "md" }]}>
+        <SimpleGrid cols={{ base: 1, lg: 3 }} spacing={"xl"}>
           <PlansBox plan="Basic" />
           <PlansBox plan="Pro" />
           <PlansBox plan="God" />
         </SimpleGrid>
       </Center>
       <Box
-        sx={{
+        style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        <Title mt={"8vh"} order={1} sx={{ textAlign: "center" }}>
+        <Title mt={"8vh"} order={1} style={{ textAlign: "center" }}>
           Included in all plans
         </Title>
-        <table>
+        <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing={"md"} mt="xl">
+          <AllPlansBox text="Universal Web Code Editor" />
+          <AllPlansBox text="Professional Notes Organizer" />
+          <AllPlansBox text="Private Git Server (coming soon)" />
+          <AllPlansBox text="Always-On™" />
+          <AllPlansBox text="Real-time Collaboration" />
+        </SimpleGrid>
+        {/* <table>
           <tr>
             <td>Universal Web Code Editor</td>
             <td>Professional Notes Organizer</td>
@@ -39,7 +53,7 @@ export default function Pricing() {
             <td>Always-On™</td>
             <td>Real-time Collaboration</td>
           </tr>
-        </table>
+        </table> */}
       </Box>
     </Box>
   );

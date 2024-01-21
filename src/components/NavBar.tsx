@@ -1,4 +1,4 @@
-import { Box, Container, Group, Image, Title } from "@mantine/core";
+import { Box, Group, Image, Title } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import os from "../os";
@@ -23,19 +23,33 @@ export default function NavBar() {
   }, [prevScrollPos]);
 
   return (
-    <Container
-      hidden={!visible}
+    <Box
       fluid
-      sx={{
+      style={{
+        padding: "15px 20px 15px 20px",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        zIndex: 100,
         justifyContent: "space-between",
         alignItems: "center",
         userSelect: "none",
+        position: "sticky",
+        top: visible ? "0" : "-100px",
+        transition: "top 0.3s",
       }}
     >
       <Group>
-        <Box display={"flex"}>
-          <Image src={"/image/logo.svg"} height={35} width={"auto"} mr={10} sx={{ pointerEvents: "none" }} />
-          <Title order={3} color="white" sx={{ margin: "auto" }}>
+        <Box
+          display={"flex"}
+          style={{ width: "min-content", marginRight: "30px" }}
+        >
+          <Image
+            src={"/image/logo.svg"}
+            height={35}
+            width={"auto"}
+            mr={10}
+            style={{ pointerEvents: "none" }}
+          />
+          <Title order={3} color="white" style={{ marginRight: 0 }}>
             vSuS
           </Title>
         </Box>
@@ -43,7 +57,10 @@ export default function NavBar() {
           Home
         </Link>
         {!!os && (
-          <Link to="/download" style={{ color: "white", textDecoration: "none" }}>
+          <Link
+            to="/download"
+            style={{ color: "white", textDecoration: "none" }}
+          >
             Download
           </Link>
         )}
@@ -51,6 +68,6 @@ export default function NavBar() {
           Pricing
         </Link>
       </Group>
-    </Container>
+    </Box>
   );
 }
