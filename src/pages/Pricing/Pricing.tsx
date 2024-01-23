@@ -2,7 +2,6 @@ import { Box, Center, SimpleGrid, Title } from "@mantine/core";
 import { useEffect } from "react";
 import AllPlansBox from "../../components/AllPlansBox";
 import PlansBox from "../../components/PlansBox";
-import "./style.css";
 
 export default function Pricing() {
   useEffect(() => {
