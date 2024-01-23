@@ -22,11 +22,9 @@ const PlansBox: React.FC<Props> = ({ plan = "Basic" }) => {
       break;
   }
 
-  const color =
-    plan === "Basic" ? "white" : plan === "Pro" ? "#673AB7" : "yellow";
+  const color = plan === "Basic" ? "white" : plan === "Pro" ? "#673AB7" : "yellow";
   const fontColor = "white";
-  const gradientStart =
-    plan === "Basic" ? "grey" : plan === "Pro" ? "#311B92" : "#948925";
+  const gradientStart = plan === "Basic" ? "grey" : plan === "Pro" ? "#311B92" : "#948925";
 
   return (
     <div
@@ -45,11 +43,7 @@ const PlansBox: React.FC<Props> = ({ plan = "Basic" }) => {
       >
         <h1 className="planTitle">{plan}</h1>
         <p className="planName">
-          {plan === "Basic"
-            ? "The basics to get you started"
-            : plan === "Pro"
-            ? "For organizations and teams"
-            : "For gods and goddesses (for real)"}
+          {plan === "Basic" ? "The basics to get you started" : plan === "Pro" ? "For organizations and teams" : "For gods and goddesses (for real)"}
         </p>
         <div className="priceHeight">
           {plan !== "Basic" ? (
@@ -71,18 +65,10 @@ const PlansBox: React.FC<Props> = ({ plan = "Basic" }) => {
           )}
         </div>
         <div>
-          <p>{`${plan === "Basic" ? "1" : plan === "Pro" ? "4" : "12"} vCPU${
-            plan !== "Basic" ? "s" : ""
-          }`}</p>
-          <p>{`${
-            plan === "Basic" ? "2" : plan === "Pro" ? "8" : "32"
-          } vRAMs`}</p>
-          <p>{`${
-            plan === "Basic" ? "5" : plan === "Pro" ? "20" : "60"
-          } Packages`}</p>
-          <p>{`${
-            plan === "Basic" ? "1" : plan === "Pro" ? "2" : "4"
-          } CI/CD Job${plan !== "Basic" ? "s" : ""}`}</p>
+          <p>{`${plan === "Basic" ? "1" : plan === "Pro" ? "4" : "12"} vCPU${plan !== "Basic" ? "s" : ""}`}</p>
+          <p>{`${plan === "Basic" ? "2" : plan === "Pro" ? "8" : "32"} vRAMs`}</p>
+          <p>{`${plan === "Basic" ? "5" : plan === "Pro" ? "20" : "60"} Packages`}</p>
+          <p>{`${plan === "Basic" ? "1" : plan === "Pro" ? "2" : "4"} CI/CD Job${plan !== "Basic" ? "s" : ""}`}</p>
         </div>
       </div>
     </div>

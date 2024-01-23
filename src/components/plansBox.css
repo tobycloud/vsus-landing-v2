@@ -1,5 +1,4 @@
 .outer {
-  width: calc((100vw - 550px) / 3);
   min-width: 380px;
   border-radius: 20px;
 }

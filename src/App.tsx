@@ -49,11 +49,29 @@ const router = createBrowserRouter(routes);
 export default function App() {
   return (
     <MantineProvider
-      withGlobalStyles
-      withNormalizeCSS
+      defaultColorScheme="dark"
       theme={{
-        colorScheme: "dark",
+        colors: {
+          dark: [
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+          ],
+        },
         fontFamily: "Readex Pro, sans-serif",
+        headings: {
+          fontFamily: "Readex Pro, sans-serif",
+        },
+        breakpoints: {
+          minplans: "80rem",
+        },
       }}
     >
       <RouterProvider router={router} />

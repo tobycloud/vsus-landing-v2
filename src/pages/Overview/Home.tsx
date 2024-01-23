@@ -1,42 +1,20 @@
-import { Box, Center, Image, Text, Title, createStyles } from "@mantine/core";
+import { Box, Center, Image, Text, Title } from "@mantine/core";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import BackgroundVideo from "../../components/BackgroundVideo";
 import os from "../../os";
-
-const useStyles = createStyles((theme) => ({
-  buttons: {
-    [theme.fn.largerThan("md")]: {
-      display: "block",
-    },
-    [theme.fn.smallerThan("md")]: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    },
-  },
-  button: {
-    padding: "10px 20px 10px 20px",
-    borderRadius: "12px",
-    textDecoration: "none",
-    margin: "1vh",
-    minWidth: 220,
-  },
-  download: { backgroundColor: "white", color: "black" },
-  web: { backgroundColor: "#010409", color: "white" },
-}));
+import classes from "./Home.module.css";
 
 export default function Home() {
-  const { classes } = useStyles();
   useEffect(() => {
     document.title = "Home - vSuS";
   }, []);
   return (
     <Box pos={"absolute"} top={0}>
-      <Box sx={{ position: "relative" }}>
+      <Box style={{ position: "relative" }}>
         <BackgroundVideo video="/video/home-bg.mp4" />
         <Box
-          sx={{
+          style={{
             position: "absolute",
             top: "50%",
             left: "50%",
@@ -47,10 +25,10 @@ export default function Home() {
           }}
         >
           <Center>
-            <Image src={"/image/logo.svg"} height={"10vh"} width={"auto"} />
+            <Image src={"/image/logo.svg"} h="100" w="100" />
           </Center>
-          <Title sx={{ margin: "2vh 0 2vh 0" }}>vSuS</Title>
-          <Text sx={{ margin: "0 0 5vh 0" }}>
+          <Title style={{ margin: "2vh 0 2vh 0" }}>vSuS</Title>
+          <Text style={{ margin: "0 0 5vh 0" }}>
             Your deployable VM-like coding environments, accessible from
             everywhere.
           </Text>

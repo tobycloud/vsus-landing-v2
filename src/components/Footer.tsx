@@ -1,29 +1,13 @@
-import { Box, Container, Text, createStyles } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { Box, Container, Text } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { Link } from "react-router-dom";
-
-const useStyles = createStyles((theme) => ({
-  footerInside: {
-    display: "flex",
-    [theme.fn.smallerThan("md")]: {
-      fontSize: "0.9rem",
-      flexDirection: "column",
-      alignItems: "center",
-      textAlign: "center",
-    },
-  },
-}));
+import classes from "./Footer.module.css";
 
 export default function Footer() {
-  const { classes } = useStyles();
-  const [height, setHeight] = useState(window.innerHeight);
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setHeight(window.innerHeight);
-    });
-  });
+  const isMobile = useMediaQuery("(max-width: 62em)");
+
   return (
-    <footer style={{ backgroundColor: "#010409" }}>
+    <footer style={{ backgroundColor: "#010409", marginTop: "5vh" }}>
       <Box className={classes.footerInside} p={20}>
         <Container>
           <Text>
@@ -31,8 +15,8 @@ export default function Footer() {
             reserved.
           </Text>
         </Container>
-        {height <= 990 && <br />}
-        <Container>
+        {isMobile && <br />}
+        <Container mt={isMobile ? "sm" : "0"}>
           <Text>
             <Link
               to="/privacy"

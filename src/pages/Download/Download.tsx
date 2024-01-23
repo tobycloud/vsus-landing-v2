@@ -1,95 +1,10 @@
-import {
-  Box,
-  Container,
-  Image,
-  Text,
-  Title,
-  createStyles,
-} from "@mantine/core";
+import { Box, Container, Image, Text, Title } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import os from "../../os";
-
-const useStyles = createStyles((theme) => ({
-  icon: {
-    maxWidth: 160,
-    maxHeight: 160,
-  },
-  iconSmall: {
-    maxWidth: 60,
-    maxHeight: 60,
-    marginBottom: 50,
-  },
-  downloadContainer: {
-    width: 692,
-    display: "flex",
-    justifyContent: "left",
-    alignItems: "center",
-    [theme.fn.smallerThan("md")]: {
-      flexDirection: "column",
-      width: "auto",
-    },
-    marginBottom: 50,
-    marginTop: 50,
-    marginLeft: 0,
-    marginRight: 0,
-    padding: 0,
-  },
-  downloadContainerMain: {
-    display: "flex",
-    flexDirection: "column",
-    [theme.fn.smallerThan("md")]: {
-      alignItems: "center",
-      marginLeft: 0,
-      textAlign: "center",
-    },
-    marginLeft: 50,
-    marginRight: 0,
-  },
-  twoButtons: {
-    display: "flex",
-    margin: 0,
-    padding: 0,
-    [theme.fn.smallerThan("md")]: {
-      flexDirection: "column",
-      alignItems: "center",
-    },
-  },
-  correctOSButton: {
-    color: "white !important",
-    backgroundColor: "#00afb8 !important",
-  },
-  button: {
-    padding: "10px 20px 10px 20px",
-    borderRadius: "12px",
-    textDecoration: "none",
-    width: 220,
-    textAlign: "center",
-    backgroundColor: "white",
-    color: "black",
-  },
-  link: {
-    color: "white",
-    marginTop: "3vh",
-    marginBottom: "3vh",
-  },
-  outer: {
-    alignItems: "center",
-    display: "flex",
-    flexDirection: "column",
-    marginLeft: "auto",
-    marginRight: "auto",
-  },
-  header: {
-    textAlign: "center",
-    marginTop: "10vh",
-    marginBottom: "5vh",
-  },
-}));
+import classes from "./Download.module.css";
 
 export default function Pricing() {
-  const { classes } = useStyles();
-
   useEffect(() => {
     document.title = "Download - vSuS";
   }, []);
@@ -165,7 +80,7 @@ export default function Pricing() {
   return (
     <Box className={classes.outer}>
       <Container className={classes.header}>
-        <Title size={50} color="#00EEEE">
+        <Title size={50} c="#00EEEE">
           Download the latest version of vSuS
         </Title>
         <Text style={{ marginTop: 20 }}>

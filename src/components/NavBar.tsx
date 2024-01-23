@@ -1,4 +1,4 @@
-import { Box, Container, Group, Header, Image, Title } from "@mantine/core";
+import { Box, Group, Image, Title } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import os from "../os";
@@ -23,57 +23,48 @@ export default function NavBar() {
   }, [prevScrollPos]);
 
   return (
-    <Header
-      height={60}
-      sx={{
-        borderBottom: 0,
-        backgroundColor: "#00000050",
-        padding: 15,
-        transition: "transform 0.25s ease-in-out",
-        transform: visible ? "translateY(0)" : "translateY(-100%)",
+    <Box
+      fluid
+      style={{
+        padding: "20px 25px 20px 25px",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        zIndex: 100,
+        justifyContent: "space-between",
+        alignItems: "center",
+        userSelect: "none",
+        position: "sticky",
+        top: visible ? "0" : "-100px",
+        transition: "top 0.3s",
       }}
-      pos={"sticky"}
     >
-      <Container
-        fluid
-        sx={{
-          justifyContent: "space-between",
-          alignItems: "center",
-          userSelect: "none",
-        }}
-      >
-        <Group>
-          <Box display={"flex"}>
-            <Image
-              src={"/image/logo.svg"}
-              height={35}
-              width={"auto"}
-              mr={10}
-              sx={{ pointerEvents: "none" }}
-            />
-            <Title order={3} color="white" sx={{ margin: "auto" }}>
-              vSuS
-            </Title>
-          </Box>
-          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
-            Home
-          </Link>
-          {!!os && (
-            <Link
-              to="/download"
-              style={{ color: "white", textDecoration: "none" }}
-            >
-              Download
-            </Link>
-          )}
+      <Group>
+        <Box display={"flex"} style={{ width: "min-content" }}>
+          <Image
+            src={"/image/logo.svg"}
+            h={35}
+            w={"auto"}
+            mr={10}
+            style={{ pointerEvents: "none" }}
+          />
+          <Title order={3} color="white" style={{ marginRight: 0 }} lh={"md"}>
+            vSuS
+          </Title>
+        </Box>
+        <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+          Home
+        </Link>
+        {!!os && (
           <Link
-            to="/pricing"
+            to="/download"
             style={{ color: "white", textDecoration: "none" }}
           >
-            Pricing
+            Download
           </Link>
-        </Group>
-      </Container>
-    </Header>
+        )}
+        <Link to="/pricing" style={{ color: "white", textDecoration: "none" }}>
+          Pricing
+        </Link>
+      </Group>
+    </Box>
   );
 }

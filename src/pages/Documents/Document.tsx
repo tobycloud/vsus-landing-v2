@@ -1,21 +1,11 @@
-import { Container, createStyles } from "@mantine/core";
+import { Container } from "@mantine/core";
 import { useEffect, useState } from "react";
 
 interface Props {
   title: string;
 }
 
-const useStyles = createStyles(() => ({
-  main: {
-    textAlign: "left",
-    marginTop: "30px",
-    marginBottom: "5vh",
-    width: "99%",
-  },
-}));
-
 export default function Document(props: Props) {
-  const { classes } = useStyles();
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
@@ -31,17 +21,18 @@ export default function Document(props: Props) {
     )
       .then((response) => response.text())
       .then((data) => setHtmlContent(data))
-      .catch((error) => console.error("Error:", error));
+      .catch(console.error);
 
     window.scrollTo(0, 0);
   }, [props.title]);
 
   return (
-    <Container className={classes.main}>
+    <Container>
       <div
         dangerouslySetInnerHTML={{
           __html: htmlContent,
         }}
+        style={{ marginTop: "5vh", textAlign: "left", width: "99%" }}
       />
     </Container>
   );
