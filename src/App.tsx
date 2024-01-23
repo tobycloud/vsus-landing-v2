@@ -51,9 +51,26 @@ export default function App() {
     <MantineProvider
       defaultColorScheme="dark"
       theme={{
+        colors: {
+          dark: [
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+            "#1a1b1e",
+          ],
+        },
         fontFamily: "Readex Pro, sans-serif",
         headings: {
           fontFamily: "Readex Pro, sans-serif",
+        },
+        breakpoints: {
+          minplans: "80rem",
         },
       }}
     >

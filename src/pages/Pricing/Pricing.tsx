@@ -20,7 +20,7 @@ export default function Pricing() {
         Pricing
       </Title>
       <Center>
-        <SimpleGrid cols={{ base: 1, lg: 3 }} spacing={"xl"}>
+        <SimpleGrid cols={{ base: 1, minplans: 3 }} spacing={"xl"}>
           <PlansBox plan="Basic" />
           <PlansBox plan="Pro" />
           <PlansBox plan="God" />

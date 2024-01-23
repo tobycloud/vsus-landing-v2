@@ -17,12 +17,21 @@ export default function Pricing() {
 
   let downloadContainers = [
     <Container className={classes.downloadContainer}>
-      <Image className={classes.icon} src={"/image/os/windows.svg"} fit="cover" />
+      <Image
+        className={classes.icon}
+        src={"/image/os/windows.svg"}
+        fit="cover"
+      />
       <Container className={classes.downloadContainerMain}>
         <Title order={1} mt={30} mb={30}>
           Download for Windows
         </Title>
-        <Link to="" className={`${classes.button} ${os === "Windows" ? classes.correctOSButton : ""}`}>
+        <Link
+          to=""
+          className={`${classes.button} ${
+            os === "Windows" ? classes.correctOSButton : ""
+          }`}
+        >
           Latest version (.exe)
         </Link>
         <Link to="" className={classes.link}>
@@ -39,12 +48,19 @@ export default function Pricing() {
         <Container className={classes.twoButtons}>
           <Link
             to=""
-            className={`${classes.button} ${os === "Linux" ? classes.correctOSButton : ""}`}
+            className={`${classes.button} ${
+              os === "Linux" ? classes.correctOSButton : ""
+            }`}
             style={width >= 992 ? { marginRight: 10 } : { marginBottom: "3vh" }}
           >
             Latest version (.tar.gz)
           </Link>
-          <Link to="" className={`${classes.button} ${os === "Linux" ? classes.correctOSButton : ""}`}>
+          <Link
+            to=""
+            className={`${classes.button} ${
+              os === "Linux" ? classes.correctOSButton : ""
+            }`}
+          >
             Latest version (.deb)
           </Link>
         </Container>
@@ -55,12 +71,16 @@ export default function Pricing() {
     </Container>,
   ];
 
-  if (os === "Linux") [downloadContainers[0], downloadContainers[1]] = [downloadContainers[1], downloadContainers[0]];
+  if (os === "Linux")
+    [downloadContainers[0], downloadContainers[1]] = [
+      downloadContainers[1],
+      downloadContainers[0],
+    ];
 
   return (
     <Box className={classes.outer}>
       <Container className={classes.header}>
-        <Title size={50} color="#00EEEE">
+        <Title size={50} c="#00EEEE">
           Download the latest version of vSuS
         </Title>
         <Text style={{ marginTop: 20 }}>
