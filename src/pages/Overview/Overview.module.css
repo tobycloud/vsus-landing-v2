@@ -17,7 +17,8 @@
 }
 
 .featureImage {
-  width: 50%;
+  width: 48vw;
+  height: auto;
   margin: 20px;
   &:hover {
     filter: scale(1.5);

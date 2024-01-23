@@ -1,15 +1,11 @@
 import { Box, Container, Text } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { useMediaQuery } from "@mantine/hooks";
 import { Link } from "react-router-dom";
 import classes from "./Footer.module.css";
 
 export default function Footer() {
-  const [height, setHeight] = useState(window.innerHeight);
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setHeight(window.innerHeight);
-    });
-  });
+  const isMobile = useMediaQuery("(max-width: 62em)");
+
   return (
     <footer style={{ backgroundColor: "#010409", marginTop: "5vh" }}>
       <Box className={classes.footerInside} p={20}>
@@ -19,8 +15,8 @@ export default function Footer() {
             reserved.
           </Text>
         </Container>
-        {height <= 990 && <br />}
-        <Container>
+        {isMobile && <br />}
+        <Container mt={isMobile ? "sm" : "0"}>
           <Text>
             <Link
               to="/privacy"

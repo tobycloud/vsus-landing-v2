@@ -43,17 +43,6 @@ export default function Pricing() {
           <AllPlansBox text="Always-On™" />
           <AllPlansBox text="Real-time Collaboration" />
         </SimpleGrid>
-        {/* <table>
-          <tr>
-            <td>Universal Web Code Editor</td>
-            <td>Professional Notes Organizer</td>
-            <td>Private Git Server (coming soon)</td>
-          </tr>
-          <tr>
-            <td>Always-On™</td>
-            <td>Real-time Collaboration</td>
-          </tr>
-        </table> */}
       </Box>
     </Box>
   );

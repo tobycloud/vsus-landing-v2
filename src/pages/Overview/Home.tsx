@@ -25,7 +25,7 @@ export default function Home() {
           }}
         >
           <Center>
-            <Image src={"/image/logo.svg"} height={"100"} width={"auto"} />
+            <Image src={"/image/logo.svg"} h="100" w="100" />
           </Center>
           <Title style={{ margin: "2vh 0 2vh 0" }}>vSuS</Title>
           <Text style={{ margin: "0 0 5vh 0" }}>

@@ -26,7 +26,7 @@ export default function NavBar() {
     <Box
       fluid
       style={{
-        padding: "15px 20px 15px 20px",
+        padding: "20px 25px 20px 25px",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
         zIndex: 100,
         justifyContent: "space-between",
@@ -38,18 +38,15 @@ export default function NavBar() {
       }}
     >
       <Group>
-        <Box
-          display={"flex"}
-          style={{ width: "min-content", marginRight: "30px" }}
-        >
+        <Box display={"flex"} style={{ width: "min-content" }}>
           <Image
             src={"/image/logo.svg"}
-            height={35}
-            width={"auto"}
+            h={35}
+            w={"auto"}
             mr={10}
             style={{ pointerEvents: "none" }}
           />
-          <Title order={3} color="white" style={{ marginRight: 0 }}>
+          <Title order={3} color="white" style={{ marginRight: 0 }} lh={"md"}>
             vSuS
           </Title>
         </Box>
