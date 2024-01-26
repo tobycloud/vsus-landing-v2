@@ -43,7 +43,7 @@ export default function Home() {
             )}
             {!["", "Mac", "Chrome OS"].includes(os) && (
               <Link
-                to={"/"}
+                to={"/download"}
                 className={`${classes.button} ${classes.download}`}
               >
                 Download for {os}
