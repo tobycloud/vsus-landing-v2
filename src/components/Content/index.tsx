@@ -1,8 +1,8 @@
 import { Box } from "@mantine/core";
 import { Outlet } from "react-router-dom";
-import classes from "./Content.module.css";
-import Footer from "./Footer";
-import NavBar from "./NavBar";
+import Footer from "../Footer";
+import NavBar from "../NavBar";
+import classes from "./index.module.css";
 
 export default function Content() {
   return (

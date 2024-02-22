@@ -30,11 +30,11 @@ const routes: RouteObject[] = [
       },
       {
         path: "/privacy",
-        element: <Document title="privacy" />,
+        element: <Document id="cc62zlogyvcywte" />,
       },
       {
         path: "/tos",
-        element: <Document title="tos" />,
+        element: <Document id="u8rco7fc6upbulf" />,
       },
       {
         path: "*",

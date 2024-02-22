@@ -1,7 +1,7 @@
 import { Box, Group, Image, Title } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import os from "../os";
+import os from "../../os";
 
 export default function NavBar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);

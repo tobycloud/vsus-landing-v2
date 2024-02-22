@@ -2,10 +2,11 @@ import { Box, Center, SimpleGrid, Title } from "@mantine/core";
 import { useEffect } from "react";
 import AllPlansBox from "../../components/AllPlansBox";
 import PlansBox from "../../components/PlansBox";
+import { setDocumentTitle } from "../../utils";
 
 export default function Pricing() {
   useEffect(() => {
-    document.title = "Pricing - vSuS";
+    setDocumentTitle("Pricing");
   }, []);
   return (
     <Box>

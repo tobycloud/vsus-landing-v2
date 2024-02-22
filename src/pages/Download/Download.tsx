@@ -2,11 +2,12 @@ import { Box, Container, Image, Text, Title } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import os from "../../os";
+import { setDocumentTitle } from "../../utils";
 import classes from "./Download.module.css";
 
 export default function Pricing() {
   useEffect(() => {
-    document.title = "Download - vSuS";
+    setDocumentTitle("Download");
   }, []);
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {

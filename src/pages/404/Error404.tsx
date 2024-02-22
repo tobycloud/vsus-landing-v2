@@ -1,10 +1,11 @@
 import { Container, Image, Text, Title } from "@mantine/core";
 import { useEffect } from "react";
+import { setDocumentTitle } from "../../utils";
 import classes from "./Error404.module.css";
 
 export default function Error404() {
   useEffect(() => {
-    document.title = "404 Not found - vSuS";
+    setDocumentTitle("404");
   }, []);
 
   setTimeout(() => {

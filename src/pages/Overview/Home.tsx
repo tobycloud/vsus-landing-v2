@@ -3,11 +3,12 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import BackgroundVideo from "../../components/BackgroundVideo";
 import os from "../../os";
+import { setDocumentTitle } from "../../utils";
 import classes from "./Home.module.css";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Home - vSuS";
+    setDocumentTitle("Home");
   }, []);
   return (
     <Box pos={"absolute"} top={0}>

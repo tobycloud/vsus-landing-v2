@@ -20,6 +20,7 @@
   width: 48vw;
   height: auto;
   margin: 20px;
+  border-radius: var(--mantine-radius-md);
   &:hover {
     filter: scale(1.5);
   }
