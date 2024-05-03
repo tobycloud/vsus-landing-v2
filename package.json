@@ -15,11 +15,13 @@
     "@mantine/core": "^7.4.2",
     "@mantine/hooks": "^7.4.2",
     "@tabler/icons-react": "^2.47.0",
+    "@types/react-helmet": "^6.1.11",
     "pocketbase": "^0.21.1",
     "postcss": "^8.4.33",
     "postcss-preset-mantine": "^1.12.3",
     "postcss-simple-vars": "^7.0.1",
     "preact": "^10.19.3",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^6.21.3"
   },
   "devDependencies": {

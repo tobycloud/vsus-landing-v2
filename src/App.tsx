@@ -5,11 +5,7 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import Content from "./components/Content";
-import Error404 from "./pages/404/Error404";
-import Document from "./pages/Documents/Document";
-import Download from "./pages/Download/Download";
-import Overview from "./pages/Overview/Overview";
-import Pricing from "./pages/Pricing/Pricing";
+import Home from "./pages/Home";
 
 const routes: RouteObject[] = [
   {
@@ -18,27 +14,7 @@ const routes: RouteObject[] = [
     children: [
       {
         path: "/",
-        element: <Overview />,
-      },
-      {
-        path: "/pricing",
-        element: <Pricing />,
-      },
-      {
-        path: "/download",
-        element: <Download />,
-      },
-      {
-        path: "/privacy",
-        element: <Document id="cc62zlogyvcywte" />,
-      },
-      {
-        path: "/tos",
-        element: <Document id="u8rco7fc6upbulf" />,
-      },
-      {
-        path: "*",
-        element: <Error404 />,
+        element: <Home />,
       },
     ],
   },
@@ -53,24 +29,21 @@ export default function App() {
       theme={{
         colors: {
           dark: [
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
+            "#111111",
+            "#111111",
+            "#111111",
+            "#111111",
+            "#111111",
+            "#111111",
+            "#111111",
+            "#111111",
+            "#111111",
+            "#111111",
           ],
         },
-        fontFamily: "Readex Pro, sans-serif",
+        fontFamily: "Inter, sans-serif",
         headings: {
-          fontFamily: "Readex Pro, sans-serif",
-        },
-        breakpoints: {
-          minplans: "80rem",
+          fontFamily: "Inter, sans-serif",
         },
       }}
     >
