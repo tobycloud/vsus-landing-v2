@@ -37,7 +37,12 @@ export default function Header() {
         transition: "top 0.3s",
       }}
     >
-      <Box display={"flex"} style={{ width: "min-content" }}>
+      <Box
+        display={"flex"}
+        style={{ width: "min-content", textDecoration: "none", color: "white" }}
+        component={Link}
+        to="/"
+      >
         <Image
           src={"/image/logo.svg"}
           h={35}
@@ -45,13 +50,7 @@ export default function Header() {
           mr={10}
           style={{ pointerEvents: "none" }}
         />
-        <Title
-          order={3}
-          color="white"
-          style={{ marginRight: 0 }}
-          lh={"md"}
-          ff="Readex Pro"
-        >
+        <Title order={3} style={{ marginRight: 0 }} lh={"md"} ff="Readex Pro">
           vSuS
         </Title>
       </Box>

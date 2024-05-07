@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Content from "./components/Content";
 import Home from "./pages/Home";
+import Pricing from "./pages/Pricing";
 
 const routes: RouteObject[] = [
   {
@@ -15,6 +16,10 @@ const routes: RouteObject[] = [
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/pricing",
+        element: <Pricing />,
       },
     ],
   },
