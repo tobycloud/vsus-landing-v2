@@ -8,7 +8,7 @@ export default function OffersNumber({
   return (
     <Flex direction="column" align="center">
       <Title c="#04FFFF" fz="100px">
-        {offer.number}
+        {offer.number}+
       </Title>
       <Text fz="calc(var(--mantine-font-size-xs) * 2)">{offer.title}</Text>
     </Flex>

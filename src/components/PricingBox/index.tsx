@@ -42,6 +42,7 @@ export default function PricingBox({
         borderRadius: "25px",
         background: `linear-gradient(180deg, ${data.topColor} 0%, ${data.bottomColor} 100%)`,
         border: `1px solid ${data.borderColor}`,
+        boxShadow: `0 0 12px 1px ${data.borderColor}`,
       }}
       py="xl"
       px="xl"

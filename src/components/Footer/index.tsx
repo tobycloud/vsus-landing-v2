@@ -67,7 +67,7 @@ export default function Footer() {
               w={50}
               style={{ borderRadius: "15%" }}
             />
-            <Text size="xl" weight={700}>
+            <Text size="xl" fw={700}>
               DaCloud™
             </Text>
           </Group>

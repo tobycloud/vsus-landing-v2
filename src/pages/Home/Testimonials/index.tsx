@@ -13,49 +13,49 @@ import classes from "./index.module.css";
 export default function Testimonials() {
   const mockdata = [
     {
-      avatar:
-        "https://archive.org/download/discordprofilepictures/discordblue.png",
+      avatar: "https://avatars.githubusercontent.com/u/72681678",
       name: "nbth",
       position: "Co-Founder of DaCloud",
       review: "tui nghi ngờ chất lượng của vsus",
     },
     {
-      avatar: "https://avatars.githubusercontent.com/u/62174797?v=4",
-      name: "Toby Cm",
-      position: "Co-Founder of DaCloud",
-      review: "vsus coming in 2025 😭",
-    },
-    {
-      avatar: "https://avatars.githubusercontent.com/u/78996937?v=4",
+      avatar: "https://avatars.githubusercontent.com/u/78996937",
       name: "pdteggman",
       position: "chém gió at DaCloud",
-      review: "sus",
+      review:
+        "nhìn vào vsus bạn sẽ thấy x, thấy reddit, thấy discord, thấy fb, thấy abcxyz",
+    },
+    {
+      avatar: "https://avatars.githubusercontent.com/u/73780382",
+      name: "CookieGMVN",
+      position: "Designer & Front-end Dev at DaCloud",
+      review:
+        "với 0 star đc chấm trên trustpilot, đây thực sự là bước tiến mới của giới công nghệ. hãy bỏ replit và dùng vSuS ngay ngày hôm nay!", // riel btw
     },
   ];
 
   return (
     <Box
-      bg="#1E1E1E"
+      bg="#1a1a1a"
       mt="calc(var(--mantine-spacing-xl) * 3)"
-      pt="calc(var(--mantine-spacing-xl) * 2)"
-      pb="calc(var(--mantine-spacing-xl) * 4.5)"
+      py="calc(var(--mantine-spacing-xl) * 2)"
     >
       <Center>
         <Badge color="#111111" size="lg">
           Testimonials
         </Badge>
       </Center>
-      <Title ta="center" mt="lg" mb="lg">
+      <Title ta="center" my="lg" mx="xs">
         Read What Others Have to Say
       </Title>
       <Text className={classes.description} ta="center" mb="xl">
         Reviews from satisfied developers who have revolutionized their
-        deployment process with our platform
+        deployment process with our platform.
       </Text>
       <Container size="lg" w="100%">
-        <Grid gutter={{ base: 100, lg: "auto" }} grow>
+        <Grid grow>
           {mockdata.map((data) => (
-            <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
+            <Grid.Col span={{ base: 12, md: 6, lg: 4 }} mb="100">
               <TestimonialBox data={data} />
             </Grid.Col>
           ))}

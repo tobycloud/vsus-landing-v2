@@ -13,3 +13,18 @@
     margin-right: auto;
   }
 }
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.dots {
+  z-index: -999;
+  position: absolute;
+  color: #00afb8;
+
+  @media (max-width: 1280px) {
+    opacity: 0.25;
+  }
+}

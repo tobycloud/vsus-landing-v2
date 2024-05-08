@@ -1,4 +1,8 @@
 import { MantineProvider } from "@mantine/core";
+import "@mantine/core/styles.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import {
   RouteObject,
   RouterProvider,
@@ -28,6 +32,10 @@ const routes: RouteObject[] = [
 const router = createBrowserRouter(routes);
 
 export default function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <MantineProvider
       defaultColorScheme="dark"

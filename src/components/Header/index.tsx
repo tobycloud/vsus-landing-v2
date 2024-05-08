@@ -1,4 +1,5 @@
-import { Box, Group, Image, Title } from "@mantine/core";
+import { Box, Button, Group, Image, Text, Title } from "@mantine/core";
+import { IconArrowRight } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -23,7 +24,6 @@ export default function Header() {
 
   return (
     <Box
-      fluid
       style={{
         padding: "20px 25px 20px 25px",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -61,6 +61,21 @@ export default function Header() {
         <Link to="/pricing" style={{ color: "white", textDecoration: "none" }}>
           Pricing
         </Link>
+        <Button
+          visibleFrom="xs"
+          color="black"
+          variant="white"
+          radius="xl"
+          size="sm"
+          ml="md"
+          component={Link}
+          to="https://dashboard.vsus.app"
+        >
+          <Group gap="xs">
+            <Text fw="600">Dashboard</Text>
+            <IconArrowRight />
+          </Group>
+        </Button>
       </Group>
     </Box>
   );

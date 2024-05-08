@@ -1,8 +1,12 @@
 import { Box, Container, Flex, Grid, Text, Title } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import PricingBox from "../../../components/PricingBox";
+import { Dots } from "./Dots";
 import classes from "./index.module.css";
 
 export default function Options() {
+  const isMobile = useMediaQuery("(max-width: 62em)");
+
   const mockdata = [
     {
       title: "Basic",
@@ -34,15 +38,13 @@ export default function Options() {
   ];
 
   return (
-    <Box
-      mih={687}
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(0,100,100,1) 0%, rgba(17,17,17,1) 100%)",
-      }}
-      mt={-75}
-      pt={75}
-    >
+    <Box mih={687} mt={-75} pt={75}>
+      <Dots className={classes.dots} style={{ left: 0, top: 110 }} />
+      <Dots className={classes.dots} style={{ left: 60, top: 110 }} />
+      <Dots className={classes.dots} style={{ left: 0, top: 250 }} />
+      <Box visibleFrom="xs">
+        <Dots className={classes.dots} style={{ right: 0, top: 160 }} />
+      </Box>
       <Flex
         mt="calc(var(--mantine-spacing-lg) * 3)"
         direction="column"
@@ -58,9 +60,17 @@ export default function Options() {
         </Box>
         <Container size="lg">
           <Grid mt="xl" grow gutter={{ base: 30, lg: "xl" }}>
-            {mockdata.map((data) => (
+            {mockdata.map((data, index) => (
               <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
-                <PricingBox data={data} />
+                <div
+                  data-aos="fade-up"
+                  data-aos-once
+                  data-aos-offset="250"
+                  data-aos-duration="1000"
+                  data-aos-delay={isMobile ? 0 : index * 100 + 50}
+                >
+                  <PricingBox data={data} />
+                </div>
               </Grid.Col>
             ))}
           </Grid>

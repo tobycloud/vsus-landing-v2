@@ -1,6 +1,5 @@
 import { Card, Text, rem } from "@mantine/core";
 import { TablerIconsProps } from "@tabler/icons-react";
-import { JSX } from "preact/jsx-runtime";
 import classes from "./index.module.css";
 
 export default function FeaturesCard({

@@ -26,7 +26,15 @@ export default function Breakdown() {
       ["Online Chat", ...fourCheckIcons],
       ["Always On", ...fourCheckIcons],
       ["SSH, HTTP Expose", ...fourCheckIcons],
-      ["", <Badge color="#00AFB8">Default</Badge>, "", "", ""],
+      [
+        "",
+        <Badge color="#00AFB8" size="lg">
+          Default
+        </Badge>,
+        "",
+        "",
+        "",
+      ],
     ],
   };
 

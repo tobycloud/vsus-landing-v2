@@ -14,7 +14,7 @@ export default function TestimonialBox({
     <Box
       bg="#111111"
       style={{ borderRadius: "var(--mantine-radius-lg)" }}
-      py="xl"
+      pt="xl"
       px="xl"
       w={320}
       mt="75px"
