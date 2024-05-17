@@ -10,6 +10,7 @@ import {
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 import DocumentSectionNavlinks from "../../../components/DocumentSectionNavlinks";
 import { LegalDocument } from "../../../database/models";
@@ -25,11 +26,11 @@ export default function Document() {
   const [opened, { toggle }] = useDisclosure();
 
   const sectionTitle = document
-    ? (documentsList.find((section) =>
-        section.documents
-          .map((doc) => doc.readable_id)
-          .includes(document.readable_id)
-      )?.title as string)
+    ? documentsList.find((section) =>
+        section.documents.some(
+          (doc) => doc.readable_id === document.readable_id
+        )
+      )?.title || ""
     : "";
 
   const links = document
@@ -39,7 +40,7 @@ export default function Document() {
           title: sectionTitle,
           href: `/docs#${sectionTitle.toLowerCase().replace(" ", "-")}`,
         },
-        { title: document.title, href: `/doc/${document.readable_id}` },
+        { title: document.title, href: `/docs/${document.readable_id}` },
       ].map((item, index) => (
         <Text component={Link} to={item.href} key={index} c="white" fz="sm">
           {item.title}
@@ -48,20 +49,26 @@ export default function Document() {
     : null;
 
   useEffect(() => {
-    if (!isMobile && opened) {
-      toggle();
-    }
-  }, [isMobile, opened]);
+    if (!isMobile && opened) toggle();
+  }, [isMobile, opened, toggle]);
 
   return (
     <>
+      <Helmet>
+        <title>{document ? document.title : "Not Found"} - Docs - vSuS</title>
+      </Helmet>
       <Flex direction={isMobile ? "column" : "row"}>
         <Box
           visibleFrom="lg"
           mr="xl"
           miw={300}
           maw={300}
-          style={{ borderRight: "1px solid var(--mantine-color-dark-4)" }}
+          h="calc(100vh - 75px)"
+          style={{
+            borderRight: "1px solid var(--mantine-color-dark-4)",
+            position: "sticky",
+            top: 75,
+          }}
         >
           <DocumentSectionNavlinks toggle={() => {}} />
         </Box>

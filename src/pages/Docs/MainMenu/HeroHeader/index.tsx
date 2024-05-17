@@ -1,15 +1,15 @@
-import { Box, Container, Flex, Text, Title } from "@mantine/core";
+import {
+  BackgroundImage,
+  Box,
+  Container,
+  Flex,
+  Text,
+  Title,
+} from "@mantine/core";
 
 export default function HeroHeader() {
   return (
-    <Box
-      mt={-75}
-      style={{
-        backgroundImage: "url('/images/components/docs-hero.svg')",
-        backgroundSize: "cover",
-        backgroundPosition: "0% 45%",
-      }}
-    >
+    <BackgroundImage mt={-75} src="/images/components/docs-hero.svg">
       <Box
         style={{ background: "rgba(0,0,0,0.75)" }}
         pt="calc(var(--mantine-spacing-xl3) + 75px)"
@@ -28,6 +28,6 @@ export default function HeroHeader() {
           </Flex>
         </Container>
       </Box>
-    </Box>
+    </BackgroundImage>
   );
 }

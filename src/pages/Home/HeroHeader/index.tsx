@@ -5,12 +5,16 @@ import { Link } from "react-router-dom";
 import { presets } from "react-text-transition";
 import TextTransition from "react-text-transition/lib/components/TextTransition";
 
+const animatingTexts: string[] = [
+  "from anywhere",
+  "at any time",
+  "from any device",
+];
+
 export default function HeroHeader() {
   const isMobile = useMediaQuery("(max-width: 62em)", true);
 
   const smallHeader = useMediaQuery("(max-width: 390px)");
-
-  const TEXTS = ["from anywhere", "at any time", "from any device"];
 
   const [index, setIndex] = useState(0);
 
@@ -32,7 +36,7 @@ export default function HeroHeader() {
           }}
           translateValue="75%"
         >
-          {TEXTS[index % TEXTS.length]}
+          {animatingTexts[index % animatingTexts.length]}
         </TextTransition>
       </Title>
       <Text mt="xl" fz="lg">

@@ -11,11 +11,11 @@ import {
 import Content from "./components/Content";
 import { getDocument, getDocumentID } from "./database";
 import { LegalDocument } from "./database/models";
-import Document from "./pages/Docs/Document";
 import Docs from "./pages/Docs/MainMenu";
 import { Error404 } from "./pages/Errors/404";
 import Home from "./pages/Home";
 import Pricing from "./pages/Pricing";
+import Document from "./pages/Docs/Document";
 
 export default function App() {
   const [loadedDocuments, setLoadedDocuments] = useState<LegalDocument[]>([]);
@@ -38,7 +38,7 @@ export default function App() {
           element: <Docs />,
         },
         {
-          path: "/doc/:readable_id",
+          path: "/docs/:readable_id",
           element: <Document />,
           loader: async ({ params }) => {
             const { readable_id } = params;

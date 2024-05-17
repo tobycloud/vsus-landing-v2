@@ -3,26 +3,26 @@ import { Link } from "react-router-dom";
 import { TablerIcon } from "../../utils/types";
 
 export default function DocumentSectionBox({
-  section,
+  title,
+  icon: IconComponent,
+  documents,
 }: {
-  section: {
-    title: string;
-    icon: TablerIcon;
-    documents: { title: string; readable_id: string }[];
-  };
+  title: string;
+  icon: TablerIcon;
+  documents: { title: string; readable_id: string }[];
 }) {
   return (
-    <Box id={section.title.toLowerCase().replaceAll(" ", "-")}>
+    <Box id={title.toLowerCase().replaceAll(" ", "-")}>
       <Group gap="xs" mb="md">
-        <section.icon size={30} />
-        <Title order={4}>{section.title}</Title>
+        <IconComponent size={30} />
+        <Title order={4}>{title}</Title>
       </Group>
       <Flex direction="column">
-        {section.documents.map((document) => (
+        {documents.map((document) => (
           <Text
             key={document.readable_id}
             component={Link}
-            to={`/doc/${document.readable_id}`}
+            to={`/docs/${document.readable_id}`}
             mb="md"
             w="max-content"
           >

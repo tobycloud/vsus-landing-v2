@@ -52,7 +52,7 @@ export default function DocumentSectionNavlinks({
               key={doc.title}
               label={doc.title}
               component={Link}
-              to={`/doc/${doc.readable_id}`}
+              to={`/docs/${doc.readable_id}`}
               active={doc.readable_id === currentDocument}
               onClick={toggle}
             />

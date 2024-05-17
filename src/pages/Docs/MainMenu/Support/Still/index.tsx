@@ -1,18 +1,19 @@
 import { Box, Group, Text } from "@mantine/core";
 import { IconHelpHexagon, IconSocial } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import { TablerIcon } from "../../../../../utils/types";
+
+const contentData: { icon: TablerIcon; title: string; link: string }[] = [
+  { icon: IconSocial, title: "Get help from the community", link: "" },
+  { icon: IconHelpHexagon, title: "Contact support", link: "" },
+];
 
 export default function Still() {
-  const allData = [
-    { icon: IconSocial, title: "Get help from the community", link: "" },
-    { icon: IconHelpHexagon, title: "Contact support", link: "" },
-  ];
-
   return (
     <Box>
       <Text fw="500">Still need help?</Text>
       <Box mt="md">
-        {allData.map((data) => (
+        {contentData.map((data) => (
           <Group
             key={data.title}
             mb="sm"

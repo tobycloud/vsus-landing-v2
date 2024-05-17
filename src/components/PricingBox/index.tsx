@@ -2,60 +2,64 @@ import { Box, Button, Flex, Group, Text, Title } from "@mantine/core";
 import { IconCheck } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
+const differentFeatures: string[] = [
+  "vCPUs up to ",
+  "vRAMs up to ",
+  "Packages up to ",
+  "CI/CD Jobs up to ",
+  "Deployments up to ",
+  "Volume Capacity up to ",
+  "CDN up to ",
+];
+
+const defaultFeatures: string[] = [
+  "Unlimited bandwidth",
+  "Online Visual Studio Code",
+  "Online Markdown Editor",
+  "Online Chat",
+  "Always On",
+  "SSH, HTTP Expose",
+];
+
 export default function PricingBox({
-  data,
+  title,
+  topColor,
+  bottomColor,
+  borderColor,
+  price,
+  description,
+  features,
 }: {
-  data: {
-    title: string;
-    topColor: string;
-    bottomColor: string;
-    borderColor: string;
-    price: string;
-    description: string;
-    features: string[];
-  };
+  title: string;
+  topColor: string;
+  bottomColor: string;
+  borderColor: string;
+  price: string;
+  description: string;
+  features: string[];
 }) {
-  const differentFeatures = [
-    "vCPUs up to ",
-    "vRAMs up to ",
-    "Packages up to ",
-    "CI/CD Jobs up to ",
-    "Deployments up to ",
-    "Volume Capacity up to ",
-    "CDN up to ",
-  ];
-
-  const defaultFeatures = [
-    "Unlimited bandwidth",
-    "Online Visual Studio Code",
-    "Online Markdown Editor",
-    "Online Chat",
-    "Always On",
-    "SSH, HTTP Expose",
-  ];
-
   return (
     <Box
       mx="auto"
       w={340}
       style={{
         borderRadius: "25px",
-        background: `linear-gradient(180deg, ${data.topColor} 0%, ${data.bottomColor} 100%)`,
-        border: `1px solid ${data.borderColor}`,
-        boxShadow: `0 0 12px 1px ${data.borderColor}`,
+        background: `linear-gradient(180deg, ${topColor} 0%, ${bottomColor} 100%)`,
+        border: `1px solid ${borderColor}`,
+        boxShadow: `0 0 12px 1px ${borderColor}`,
       }}
       py="xl"
       px="xl"
     >
       <Flex direction="column" align="center">
-        <Title fw="600">{data.title}</Title>
+        <Title fw="600">{title}</Title>
         <Text fz="xl" mt="lg">
           <Title component="span" fz="45">
-            {data.price}
+            {price}
           </Title>
-          {data.price != "Custom" ? "/mo" : ""}
+          {price != "Custom" ? "/mo" : ""}
         </Text>
-        <Text mt="lg">{data.description}</Text>
+        <Text mt="lg">{description}</Text>
         <Button
           color="black"
           variant="white"
@@ -74,7 +78,7 @@ export default function PricingBox({
               <IconCheck />
               <Text>
                 {feature}
-                {data.features[index]}
+                {features[index]}
               </Text>
             </Group>
           ))}

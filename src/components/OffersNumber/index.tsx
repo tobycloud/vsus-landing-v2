@@ -1,16 +1,18 @@
 import { Flex, Text, Title } from "@mantine/core";
 
 export default function OffersNumber({
-  offer,
+  number,
+  title,
 }: {
-  offer: { number: string; title: string };
+  number: string;
+  title: string;
 }) {
   return (
     <Flex direction="column" align="center">
       <Title c="#04FFFF" fz="100px">
-        {offer.number}+
+        {number}+
       </Title>
-      <Text fz="calc(var(--mantine-font-size-xs) * 2)">{offer.title}</Text>
+      <Text fz="calc(var(--mantine-font-size-xs) * 2)">{title}</Text>
     </Flex>
   );
 }

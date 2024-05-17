@@ -1,10 +1,14 @@
 import { Box, Container, Image, SimpleGrid, Text, Title } from "@mantine/core";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import classes from "./index.module.css";
 
 export function Error404() {
   return (
     <Container className={classes.root}>
+      <Helmet>
+        <title>Not Found - vSuS</title>
+      </Helmet>
       <SimpleGrid spacing={{ base: 40, sm: 80 }} cols={{ base: 1, sm: 2 }}>
         <Box className={classes.mobileImage}>
           <Image

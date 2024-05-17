@@ -1,14 +1,15 @@
 import { Avatar, Box, Center, Flex, Text, Title } from "@mantine/core";
 
 export default function TestimonialBox({
-  data,
+  avatar,
+  name,
+  position,
+  review,
 }: {
-  data: {
-    avatar: string;
-    name: string;
-    position: string;
-    review: string;
-  };
+  avatar: string;
+  name: string;
+  position: string;
+  review: string;
 }) {
   return (
     <Box
@@ -23,15 +24,15 @@ export default function TestimonialBox({
     >
       <Center mt="calc((var(--mantine-spacing-xl) + 75px) * -1)">
         <Flex direction="column" align="center">
-          <Avatar size="150px" mb="lg" src={data.avatar} />
+          <Avatar size="150px" mb="lg" src={avatar} />
           <Title order={2} mb="sm" ta="center">
-            {data.name}
+            {name}
           </Title>
           <Text c="#9f9f9f" ta="center">
-            {data.position}
+            {position}
           </Text>
           <Text mt="xl" ta="center">
-            {data.review}
+            {review}
           </Text>
         </Flex>
       </Center>

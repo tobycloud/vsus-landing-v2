@@ -6,9 +6,13 @@ export default function Sections() {
   return (
     <Container mt="xl3" size="xl" px="xl">
       <Grid>
-        {documentsList.map((section) => (
-          <Grid.Col span={{ base: 12, md: 6, lg: 3 }} key={section.title}>
-            <DocumentSectionBox section={section} />
+        {documentsList.map((data) => (
+          <Grid.Col span={{ base: 12, md: 6, lg: 3 }} key={data.title}>
+            <DocumentSectionBox
+              title={data.title}
+              documents={data.documents}
+              icon={data.icon}
+            />
           </Grid.Col>
         ))}
       </Grid>

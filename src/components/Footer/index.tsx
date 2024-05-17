@@ -7,7 +7,10 @@ import {
 import { Link } from "react-router-dom";
 import classes from "./index.module.css";
 
-const allData = [
+const contentData: {
+  title: string;
+  links: { label: string; link: string }[];
+}[] = [
   {
     title: "Support",
     links: [{ label: "Docs", link: "/docs" }],
@@ -31,27 +34,22 @@ const allData = [
   },
 ];
 
+const groups = contentData.map((group) => {
+  const links = group.links.map((link, index) => (
+    <Text key={index} className={classes.link} component={Link} to={link.link}>
+      {link.label}
+    </Text>
+  ));
+
+  return (
+    <div className={classes.wrapper} key={group.title}>
+      <Text className={classes.title}>{group.title}</Text>
+      {links}
+    </div>
+  );
+});
+
 export default function Footer() {
-  const groups = allData.map((group) => {
-    const links = group.links.map((link, index) => (
-      <Text
-        key={index}
-        className={classes.link}
-        component={Link}
-        to={link.link}
-      >
-        {link.label}
-      </Text>
-    ));
-
-    return (
-      <div className={classes.wrapper} key={group.title}>
-        <Text className={classes.title}>{group.title}</Text>
-        {links}
-      </div>
-    );
-  });
-
   return (
     <footer className={classes.footer}>
       <Container className={classes.inner}>

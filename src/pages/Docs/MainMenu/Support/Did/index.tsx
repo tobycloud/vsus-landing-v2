@@ -21,7 +21,7 @@ export default function Did() {
 
   useEffect(() => {
     form.setFieldValue("feedback", buttonPressed);
-  }, [buttonPressed]);
+  }, [buttonPressed, form]);
 
   return (
     <Box>

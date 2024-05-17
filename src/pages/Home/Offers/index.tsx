@@ -13,27 +13,27 @@ import { Link } from "react-router-dom";
 import OffersNumber from "../../../components/OffersNumber";
 import classes from "./index.module.css";
 
+const contentData: { number: string; title: string }[] = [
+  {
+    number: "5",
+    title: "Instances",
+  },
+  {
+    number: "4",
+    title: "Blocks",
+  },
+  {
+    number: "5",
+    title: "Deployments",
+  },
+  {
+    number: "1",
+    title: "CI/CD Jobs",
+  },
+];
+
 export default function Offers() {
   const isMobile = useMediaQuery("(max-width: 62em)", true);
-
-  const allData = [
-    {
-      number: "5",
-      title: "Instances",
-    },
-    {
-      number: "4",
-      title: "Blocks",
-    },
-    {
-      number: "5",
-      title: "Deployments",
-    },
-    {
-      number: "1",
-      title: "CI/CD Jobs",
-    },
-  ];
 
   return (
     <Container mt="xl3" size="lg" w="100%">
@@ -45,8 +45,8 @@ export default function Offers() {
         at no cost to you from the outset.
       </Text>
       <Grid mt="xl">
-        {allData.map((offer, index) => (
-          <Grid.Col span={{ base: 12, md: 6, lg: 3 }} key={offer.title}>
+        {contentData.map((data, index) => (
+          <Grid.Col span={{ base: 12, md: 6, lg: 3 }} key={data.title}>
             <div
               data-aos="fade-up"
               data-aos-once
@@ -54,7 +54,7 @@ export default function Offers() {
               data-aos-duration="1000"
               data-aos-delay={isMobile ? 0 : index * 100}
             >
-              <OffersNumber offer={offer} />
+              <OffersNumber title={data.title} number={data.number} />
             </div>
           </Grid.Col>
         ))}

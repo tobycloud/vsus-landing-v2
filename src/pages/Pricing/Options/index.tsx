@@ -4,38 +4,46 @@ import PricingBox from "../../../components/PricingBox";
 import { Dots } from "./Dots";
 import classes from "./index.module.css";
 
+const contentData: {
+  title: string;
+  topColor: string;
+  bottomColor: string;
+  borderColor: string;
+  price: string;
+  description: string;
+  features: string[];
+}[] = [
+  {
+    title: "Basic",
+    topColor: "#0B8B00",
+    bottomColor: "#001105",
+    borderColor: "#00F881",
+    price: "$2.99",
+    description: "For individuals and small teams",
+    features: ["2", "4", "15", "1", "20", "15GB", "10GB"],
+  },
+  {
+    title: "Pro",
+    topColor: "#3D008B",
+    bottomColor: "#110027",
+    borderColor: "#8B00F8",
+    price: "$4.99",
+    description: "For organizations and teams",
+    features: ["4", "8", "25", "2", "35", "25GB", "15GB"],
+  },
+  {
+    title: "Enterprise",
+    topColor: "#AFB200",
+    bottomColor: "#272600",
+    borderColor: "#F8EE00",
+    price: "Custom",
+    description: "Unleash the impossible",
+    features: ["8+", "16+", "40+", "4+", "50+", "30GB+", "20GB+"],
+  },
+];
+
 export default function Options() {
   const isMobile = useMediaQuery("(max-width: 62em)");
-
-  const allData = [
-    {
-      title: "Basic",
-      topColor: "#0B8B00",
-      bottomColor: "#001105",
-      borderColor: "#00F881",
-      price: "$2.99",
-      description: "For individuals and small teams",
-      features: ["2", "4", "15", "1", "20", "15GB", "10GB"],
-    },
-    {
-      title: "Pro",
-      topColor: "#3D008B",
-      bottomColor: "#110027",
-      borderColor: "#8B00F8",
-      price: "$4.99",
-      description: "For organizations and teams",
-      features: ["4", "8", "25", "2", "35", "25GB", "15GB"],
-    },
-    {
-      title: "Enterprise",
-      topColor: "#AFB200",
-      bottomColor: "#272600",
-      borderColor: "#F8EE00",
-      price: "Custom",
-      description: "Unleash the impossible",
-      features: ["8+", "16+", "40+", "4+", "50+", "30GB+", "20GB+"],
-    },
-  ];
 
   return (
     <Box mih={687} mt={-75} pt={75}>
@@ -56,7 +64,7 @@ export default function Options() {
         </Box>
         <Container size="lg">
           <Grid mt="xl" grow gutter={{ base: 30, lg: "xl" }}>
-            {allData.map((data, index) => (
+            {contentData.map((data, index) => (
               <Grid.Col span={{ base: 12, md: 6, lg: 4 }} key={data.title}>
                 <div
                   data-aos="fade-up"
@@ -65,7 +73,15 @@ export default function Options() {
                   data-aos-duration="1000"
                   data-aos-delay={isMobile ? 0 : index * 100 + 50}
                 >
-                  <PricingBox data={data} />
+                  <PricingBox
+                    title={data.title}
+                    topColor={data.topColor}
+                    bottomColor={data.bottomColor}
+                    borderColor={data.borderColor}
+                    price={data.price}
+                    description={data.description}
+                    features={data.features}
+                  />
                 </div>
               </Grid.Col>
             ))}

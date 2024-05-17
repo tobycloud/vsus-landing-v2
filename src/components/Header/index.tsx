@@ -1,12 +1,9 @@
 import { Box, Button, Group, Image, Text, Title } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
 import { IconArrowRight } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  const isMobile = useMediaQuery("(max-width: 75em)");
-
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -23,22 +20,25 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [prevScrollPos]);
 
-  const inDoc = window.location.pathname.includes("/doc/");
+  const inDoc =
+    !["/docs", "/docs/"].includes(window.location.pathname) &&
+    window.location.pathname.includes("/docs/");
 
   return (
     <Box
       style={{
         padding: "20px 25px 20px 25px",
-        backgroundColor: `rgba(0, 0, 0, ${inDoc && isMobile ? 1 : 0.5})`,
+        backgroundColor: `rgba(0, 0, 0, ${inDoc ? 1 : 0.5})`,
         zIndex: 100,
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         userSelect: "none",
         position: "sticky",
-        top: visible || (inDoc && isMobile) ? "0" : "-100px",
+        top: visible || inDoc ? "0" : "-100px",
         transition: "top 0.3s",
       }}
     >
