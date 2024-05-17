@@ -20,7 +20,7 @@ export default function HeroHeader() {
   }, []);
 
   return (
-    <Container size="lg" mt="calc(var(--mantine-spacing-xl) * 3)" w="100%">
+    <Container size="lg" mt="xl3" w="100%">
       <Title fz={smallHeader ? "45" : isMobile ? "50" : "70"}>
         VM-like coding environments, accessible{" "}
         <TextTransition
@@ -43,7 +43,7 @@ export default function HeroHeader() {
         . Our platform offers VM-like coding environments accessible across
         devices, empowering you to code wherever inspiration strikes.
       </Text>
-      <Center mt="calc(var(--mantine-spacing-xl) * 1.5)" mb="md">
+      <Center mt="calc(var(--mantine-spacing-xl3) / 2)" mb="md">
         <Button
           color="#00AFB8"
           variant="filled"

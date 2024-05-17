@@ -16,7 +16,7 @@ import classes from "./index.module.css";
 export default function Offers() {
   const isMobile = useMediaQuery("(max-width: 62em)", true);
 
-  const mockdata = [
+  const allData = [
     {
       number: "5",
       title: "Instances",
@@ -36,7 +36,7 @@ export default function Offers() {
   ];
 
   return (
-    <Container mt="calc(var(--mantine-spacing-xl) * 3)" size="lg" w="100%">
+    <Container mt="xl3" size="lg" w="100%">
       <Title ta="center" mt="sm" mb="lg">
         What vSuS Offers
       </Title>
@@ -45,8 +45,8 @@ export default function Offers() {
         at no cost to you from the outset.
       </Text>
       <Grid mt="xl">
-        {mockdata.map((offer, index) => (
-          <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>
+        {allData.map((offer, index) => (
+          <Grid.Col span={{ base: 12, md: 6, lg: 3 }} key={offer.title}>
             <div
               data-aos="fade-up"
               data-aos-once
@@ -59,7 +59,7 @@ export default function Offers() {
           </Grid.Col>
         ))}
       </Grid>
-      <Center mt="calc(var(--mantine-spacing-xl) * 2)">
+      <Center mt="xl2">
         <Button
           color="black"
           variant="white"

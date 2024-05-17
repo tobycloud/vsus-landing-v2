@@ -17,11 +17,11 @@ export default function AreYouReady() {
       <Container
         size="lg"
         w="100%"
-        mt="calc(var(--mantine-spacing-xl) * 3)"
+        my="xl3"
         style={{
           borderRadius: "var(--mantine-radius-lg)",
         }}
-        py="calc(var(--mantine-spacing-xl) * 2)"
+        py="xl2"
         mx="xl"
         className={classes.ayrBox}
       >

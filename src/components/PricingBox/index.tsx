@@ -70,7 +70,7 @@ export default function PricingBox({
         </Button>
         <Box w="100%">
           {differentFeatures.map((feature, index) => (
-            <Group gap="xs" mb="xs">
+            <Group gap="xs" mb="xs" key={feature}>
               <IconCheck />
               <Text>
                 {feature}
@@ -79,7 +79,7 @@ export default function PricingBox({
             </Group>
           ))}
           {defaultFeatures.map((feature) => (
-            <Group gap="xs" mb="xs">
+            <Group gap="xs" mb="xs" key={feature}>
               <IconCheck />
               <Text>{feature}</Text>
             </Group>

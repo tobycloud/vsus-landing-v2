@@ -7,7 +7,7 @@ import classes from "./index.module.css";
 export default function Options() {
   const isMobile = useMediaQuery("(max-width: 62em)");
 
-  const mockdata = [
+  const allData = [
     {
       title: "Basic",
       topColor: "#0B8B00",
@@ -45,11 +45,7 @@ export default function Options() {
       <Box visibleFrom="xs">
         <Dots className={classes.dots} style={{ right: 0, top: 160 }} />
       </Box>
-      <Flex
-        mt="calc(var(--mantine-spacing-lg) * 3)"
-        direction="column"
-        align="center"
-      >
+      <Flex mt="lg3" direction="column" align="center">
         <Box mx="lg">
           <Title ta="center" my="lg" fz={50}>
             Pick the plan that’s right for you
@@ -60,12 +56,12 @@ export default function Options() {
         </Box>
         <Container size="lg">
           <Grid mt="xl" grow gutter={{ base: 30, lg: "xl" }}>
-            {mockdata.map((data, index) => (
-              <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
+            {allData.map((data, index) => (
+              <Grid.Col span={{ base: 12, md: 6, lg: 4 }} key={data.title}>
                 <div
                   data-aos="fade-up"
                   data-aos-once
-                  data-aos-offset="250"
+                  data-aos-offset="0"
                   data-aos-duration="1000"
                   data-aos-delay={isMobile ? 0 : index * 100 + 50}
                 >

@@ -29,7 +29,7 @@ export default function Questions() {
   ];
 
   return (
-    <Container mt="calc(var(--mantine-spacing-lg) * 3)" size="lg" w="100%">
+    <Container mt="lg3" mb="xl3" size="lg" w="100%">
       <Title order={2} ta="center">
         Have pricing questions? We have answers.
       </Title>

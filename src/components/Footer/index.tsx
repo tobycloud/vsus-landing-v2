@@ -7,13 +7,10 @@ import {
 import { Link } from "react-router-dom";
 import classes from "./index.module.css";
 
-const data = [
+const allData = [
   {
     title: "Support",
-    links: [
-      { label: "Privacy Policy", link: "/privacy" },
-      { label: "Terms of Service", link: "/tos" },
-    ],
+    links: [{ label: "Docs", link: "/docs" }],
   },
   // {
   //   title: "Project",
@@ -29,19 +26,19 @@ const data = [
     links: [
       { label: "Join Discord", link: "https://discord.com/invite/wJ3kHtmG6J" },
       { label: "Follow on Twitter", link: "https://twitter.com/realdacloud" },
-      { label: "GitHub discussions", link: "https://github.com/tobycloud" },
+      { label: "GitHub Discussions", link: "https://github.com/tobycloud" },
     ],
   },
 ];
 
 export default function Footer() {
-  const groups = data.map((group) => {
+  const groups = allData.map((group) => {
     const links = group.links.map((link, index) => (
-      <Text<"a">
+      <Text
         key={index}
         className={classes.link}
-        component="a"
-        href={link.link}
+        component={Link}
+        to={link.link}
       >
         {link.label}
       </Text>
@@ -61,15 +58,13 @@ export default function Footer() {
         <div className={classes.logo}>
           <Group gap="xs" mb="md">
             <Image
-              src="/image/dacloud.png"
+              src="/images/dacloud.png"
               alt="DaCloud™"
               h={50}
               w={50}
               style={{ borderRadius: "15%" }}
             />
-            <Text size="xl" fw={700}>
-              DaCloud™
-            </Text>
+            <Text size="xl">DaCloud™</Text>
           </Group>
           <Text size="xs" className={classes.description}>
             We delay projects to make them perfect.

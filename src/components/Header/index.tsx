@@ -1,9 +1,12 @@
 import { Box, Button, Group, Image, Text, Title } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { IconArrowRight } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
+  const isMobile = useMediaQuery("(max-width: 75em)");
+
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -22,18 +25,20 @@ export default function Header() {
     };
   }, [prevScrollPos]);
 
+  const inDoc = window.location.pathname.includes("/doc/");
+
   return (
     <Box
       style={{
         padding: "20px 25px 20px 25px",
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backgroundColor: `rgba(0, 0, 0, ${inDoc && isMobile ? 1 : 0.5})`,
         zIndex: 100,
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         userSelect: "none",
         position: "sticky",
-        top: visible ? "0" : "-100px",
+        top: visible || (inDoc && isMobile) ? "0" : "-100px",
         transition: "top 0.3s",
       }}
     >
@@ -44,7 +49,7 @@ export default function Header() {
         to="/"
       >
         <Image
-          src={"/image/logo.svg"}
+          src={"/images/logo.svg"}
           h={35}
           w={"auto"}
           mr={10}

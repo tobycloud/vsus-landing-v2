@@ -13,6 +13,3 @@ export const monthsKey = {
   12: "December",
 } as const;
 
-export function setDocumentTitle(title: string) {
-  document.title = `${title} - vSuS`;
-}

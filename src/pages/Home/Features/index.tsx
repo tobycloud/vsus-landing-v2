@@ -7,7 +7,7 @@ import {
 import FeaturesCard from "../../../components/FeaturesCard";
 
 export default function Features() {
-  const mockdata = [
+  const allData = [
     {
       title: "Spin Up Your Dev Machine",
       description:
@@ -32,10 +32,10 @@ export default function Features() {
   ];
 
   return (
-    <Container size="lg" mt="calc(var(--mantine-spacing-xl) * 3)">
+    <Container size="lg" mt="xl3">
       <Grid gutter={{ base: 30, md: "xl" }} grow>
-        {mockdata.map((feature) => (
-          <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
+        {allData.map((feature) => (
+          <Grid.Col span={{ base: 12, md: 6, lg: 4 }} key={feature.title}>
             <FeaturesCard feature={feature} />
           </Grid.Col>
         ))}

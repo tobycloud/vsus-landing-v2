@@ -11,7 +11,7 @@ import TestimonialBox from "../../../components/TestimonialBox";
 import classes from "./index.module.css";
 
 export default function Testimonials() {
-  const mockdata = [
+  const allData = [
     {
       avatar: "https://avatars.githubusercontent.com/u/72681678",
       name: "nbth",
@@ -35,11 +35,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <Box
-      bg="#1a1a1a"
-      mt="calc(var(--mantine-spacing-xl) * 3)"
-      py="calc(var(--mantine-spacing-xl) * 2)"
-    >
+    <Box bg="#1a1a1a" mt="xl3" py="xl2">
       <Center>
         <Badge color="#111111" size="lg">
           Testimonials
@@ -54,8 +50,12 @@ export default function Testimonials() {
       </Text>
       <Container size="lg" w="100%">
         <Grid grow>
-          {mockdata.map((data) => (
-            <Grid.Col span={{ base: 12, md: 6, lg: 4 }} mb="100">
+          {allData.map((data) => (
+            <Grid.Col
+              span={{ base: 12, md: 6, lg: 4 }}
+              mb="100"
+              key={data.name}
+            >
               <TestimonialBox data={data} />
             </Grid.Col>
           ))}

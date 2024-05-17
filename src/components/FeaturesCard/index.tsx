@@ -1,5 +1,5 @@
 import { Card, Text, rem } from "@mantine/core";
-import { TablerIconsProps } from "@tabler/icons-react";
+import { TablerIcon } from "../../utils/types";
 import classes from "./index.module.css";
 
 export default function FeaturesCard({
@@ -7,7 +7,7 @@ export default function FeaturesCard({
 }: {
   feature: {
     title: string;
-    icon: (props: TablerIconsProps) => JSX.Element;
+    icon: TablerIcon;
     description: string;
     bg: string;
   };

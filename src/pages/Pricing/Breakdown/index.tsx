@@ -39,7 +39,7 @@ export default function Breakdown() {
   };
 
   return (
-    <Box mt="calc(var(--mantine-spacing-xl) * 3)" mx="xl" visibleFrom="xs">
+    <Box mt="xl3" mx="xl" visibleFrom="xs">
       <Title ta="center" order={2}>
         Let we break it down for you
       </Title>

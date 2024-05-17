@@ -8,5 +8,16 @@ export const getDocument = async (
 ): Promise<LegalDocument | null> => {
   return await pocketbase
     .collection("documents")
-    .getOne(id, { requestKey: null });
+    .getOne(id);
 };
+
+export const getDocumentID = async (
+  readable_id: string
+): Promise<string | null> => {
+  const document = await pocketbase
+    .collection("documents")
+    .getFullList({
+      filter: `readable_id = "${readable_id}"`,
+  });
+  return document[0]?.id || null;
+}
