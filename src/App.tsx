@@ -1,76 +1,99 @@
 import { MantineProvider } from "@mantine/core";
+import "@mantine/core/styles.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect, useState } from "react";
 import {
   RouteObject,
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
 import Content from "./components/Content";
-import Error404 from "./pages/404/Error404";
-import Document from "./pages/Documents/Document";
-import Download from "./pages/Download/Download";
-import Overview from "./pages/Overview/Overview";
-import Pricing from "./pages/Pricing/Pricing";
-
-const routes: RouteObject[] = [
-  {
-    path: "/",
-    element: <Content />,
-    children: [
-      {
-        path: "/",
-        element: <Overview />,
-      },
-      {
-        path: "/pricing",
-        element: <Pricing />,
-      },
-      {
-        path: "/download",
-        element: <Download />,
-      },
-      {
-        path: "/privacy",
-        element: <Document id="cc62zlogyvcywte" />,
-      },
-      {
-        path: "/tos",
-        element: <Document id="u8rco7fc6upbulf" />,
-      },
-      {
-        path: "*",
-        element: <Error404 />,
-      },
-    ],
-  },
-];
-
-const router = createBrowserRouter(routes);
+import { PBDocument } from "./database/models";
+import Document from "./pages/Docs/Document";
+import Docs from "./pages/Docs/MainMenu";
+import { Error404 } from "./pages/Errors/404";
+import Home from "./pages/Home";
+import Pricing from "./pages/Pricing";
+import { documentLoader } from "./utils";
 
 export default function App() {
+  const [loadedDocuments, setLoadedDocuments] = useState<PBDocument[]>([]);
+
+  const routes: RouteObject[] = [
+    {
+      path: "/",
+      element: <Content />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/pricing",
+          element: <Pricing />,
+        },
+        {
+          path: "/docs",
+          element: <Docs />,
+        },
+        {
+          path: "/docs/:readable_id",
+          element: <Document />,
+          loader: async ({ params }) => {
+            const { readable_id } = params;
+            return documentLoader(
+              loadedDocuments,
+              setLoadedDocuments,
+              readable_id
+            );
+          },
+        },
+        {
+          path: "*",
+          element: <Error404 />,
+        },
+      ],
+    },
+  ];
+
+  const router = createBrowserRouter(routes);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <MantineProvider
       defaultColorScheme="dark"
       theme={{
         colors: {
           dark: [
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
-            "#1a1b1e",
+            "#ffffff",
+            "#606060",
+            "#535353",
+            "#464646",
+            "#393939",
+            "#2d2d2d",
+            "#202020",
+            "#111111",
+            "#060606",
+            "#000000",
           ],
         },
-        fontFamily: "Readex Pro, sans-serif",
+        fontFamily: "Inter, sans-serif",
         headings: {
-          fontFamily: "Readex Pro, sans-serif",
+          fontFamily: "Inter, sans-serif",
         },
-        breakpoints: {
-          minplans: "80rem",
+        spacing: {
+          xs: "0.625rem",
+          sm: "0.75rem",
+          md: "1rem",
+          lg: "1.25rem",
+          lg3: "3.75rem",
+          xl: "2rem",
+          xl2: "4rem",
+          xl3: "6rem",
         },
       }}
     >

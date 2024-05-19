@@ -1,0 +1,30 @@
+.description {
+  max-width: rem(600px);
+  margin: auto;
+
+  &::after {
+    content: "";
+    display: block;
+    background-color: white;
+    width: rem(45px);
+    height: rem(2px);
+    margin-top: var(--mantine-spacing-lg);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.dots {
+  z-index: -999;
+  position: absolute;
+  color: #00afb8;
+
+  @media (max-width: 1280px) {
+    opacity: 0.1;
+  }
+}
