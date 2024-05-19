@@ -1,11 +1,9 @@
 import PocketBase from "pocketbase";
-import { LegalDocument } from "./models";
+import { PBDocument } from "./models";
 
 const pocketbase = new PocketBase("https://pocketbase.vsus.app/");
 
-export const getDocument = async (
-  id: string
-): Promise<LegalDocument | null> => {
+export const getDocument = async (id: string): Promise<PBDocument | null> => {
   return await pocketbase.collection("documents").getOne(id);
 };
 

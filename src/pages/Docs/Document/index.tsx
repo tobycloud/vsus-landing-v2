@@ -13,40 +13,31 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 import DocumentSectionNavlinks from "../../../components/DocumentSectionNavlinks";
-import { LegalDocument } from "../../../database/models";
 import { monthsKey } from "../../../utils";
+import { FetchedDocumentType } from "../../../utils/types";
 import { Error404 } from "../../Errors/404";
-import { documentsList } from "../documents_list";
 
 export default function Document() {
-  const { document } = useLoaderData() as { document: LegalDocument };
+  const { document, sectionTitle } = useLoaderData() as FetchedDocumentType;
 
   const isMobile = useMediaQuery("(max-width: 75em)");
 
   const [opened, { toggle }] = useDisclosure();
 
-  const sectionTitle = document
-    ? documentsList.find((section) =>
-        section.documents.some(
-          (doc) => doc.readable_id === document.readable_id
-        )
-      )?.title || ""
-    : "";
-
-  const links = document
-    ? [
-        { title: "Docs", href: "/docs" },
-        {
-          title: sectionTitle,
-          href: `/docs#${sectionTitle.toLowerCase().replace(" ", "-")}`,
-        },
-        { title: document.title, href: `/docs/${document.readable_id}` },
-      ].map((item, index) => (
-        <Text component={Link} to={item.href} key={index} c="white" fz="sm">
-          {item.title}
-        </Text>
-      ))
-    : null;
+  const breadcumbLinks =
+    document &&
+    [
+      { title: "Docs", href: "/docs" },
+      {
+        title: sectionTitle,
+        href: `/docs#${sectionTitle.toLowerCase().replace(" ", "-")}`,
+      },
+      { title: document.title, href: `/docs/${document.readable_id}` },
+    ].map((item, index) => (
+      <Text component={Link} to={item.href} key={index} c="white" fz="sm">
+        {item.title}
+      </Text>
+    ));
 
   useEffect(() => {
     if (!isMobile && opened) toggle();
@@ -87,7 +78,7 @@ export default function Document() {
         >
           <Group>
             <Burger opened={opened} onClick={toggle} size="sm" />
-            <Breadcrumbs hidden={!document}>{links}</Breadcrumbs>
+            <Breadcrumbs hidden={!document}>{breadcumbLinks}</Breadcrumbs>
             <Text hidden={!!document} fz="sm">
               Document not found
             </Text>

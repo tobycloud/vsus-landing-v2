@@ -1,7 +1,7 @@
 import { IconGavel } from "@tabler/icons-react";
-import { TablerIcon } from "../../utils/types";
+import { DocumentSectionType } from "../../utils/types";
 
-export const documentsList: {title: string; icon: TablerIcon; documents: {title: string; readable_id: string}[]}[] = [
+export const documentsList: DocumentSectionType[] = [
   {
     title: "Legal",
     icon: IconGavel,

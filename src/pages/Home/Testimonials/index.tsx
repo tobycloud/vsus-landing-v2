@@ -8,15 +8,11 @@ import {
   Title,
 } from "@mantine/core";
 import TestimonialBox from "../../../components/TestimonialBox";
+import { TesimonialType } from "../../../utils/types";
 import classes from "./index.module.css";
 
 // TODO: replace by 3 real testers
-const contentData: {
-  avatar: string;
-  name: string;
-  position: string;
-  review: string;
-}[] = [
+const contentData: TesimonialType[] = [
   {
     avatar: "https://avatars.githubusercontent.com/u/72681678",
     name: "nbth",
@@ -62,7 +58,12 @@ export default function Testimonials() {
               mb="100"
               key={data.name}
             >
-              <TestimonialBox avatar={data.avatar} name={data.name} position={data.position} review={data.review} />
+              <TestimonialBox
+                avatar={data.avatar}
+                name={data.name}
+                position={data.position}
+                review={data.review}
+              />
             </Grid.Col>
           ))}
         </Grid>

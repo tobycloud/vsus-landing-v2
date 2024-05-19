@@ -11,9 +11,10 @@ import { useMediaQuery } from "@mantine/hooks";
 import { IconShoppingCart } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import OffersNumber from "../../../components/OffersNumber";
+import { OfferType } from "../../../utils/types";
 import classes from "./index.module.css";
 
-const contentData: { number: string; title: string }[] = [
+const contentData: OfferType[] = [
   {
     number: "5",
     title: "Instances",

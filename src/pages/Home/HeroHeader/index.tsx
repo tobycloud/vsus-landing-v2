@@ -20,7 +20,7 @@ export default function HeroHeader() {
 
   useEffect(() => {
     const intervalId = setInterval(() => setIndex((index) => index + 1), 3000);
-    return () => clearTimeout(intervalId);
+    return () => clearInterval(intervalId);
   }, []);
 
   return (

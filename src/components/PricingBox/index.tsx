@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Group, Text, Title } from "@mantine/core";
 import { IconCheck } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import { PricingBoxType } from "../../utils/types";
 
 const differentFeatures: string[] = [
   "vCPUs up to ",
@@ -29,15 +30,7 @@ export default function PricingBox({
   price,
   description,
   features,
-}: {
-  title: string;
-  topColor: string;
-  bottomColor: string;
-  borderColor: string;
-  price: string;
-  description: string;
-  features: string[];
-}) {
+}: PricingBoxType) {
   return (
     <Box
       mx="auto"

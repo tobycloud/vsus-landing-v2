@@ -5,12 +5,10 @@ import {
   IconBrandTwitter,
 } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import { FooterContent } from "../../utils/types";
 import classes from "./index.module.css";
 
-const contentData: {
-  title: string;
-  links: { label: string; link: string }[];
-}[] = [
+const contentData: FooterContent[] = [
   {
     title: "Support",
     links: [{ label: "Docs", link: "/docs" }],

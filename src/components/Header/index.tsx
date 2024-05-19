@@ -3,6 +3,13 @@ import { IconArrowRight } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+const isInDoc = () => {
+  return (
+    !["/docs", "/docs/"].includes(window.location.pathname) &&
+    window.location.pathname.includes("/docs/")
+  );
+};
+
 export default function Header() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -20,12 +27,13 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [prevScrollPos]);
 
-  const inDoc =
-    !["/docs", "/docs/"].includes(window.location.pathname) &&
-    window.location.pathname.includes("/docs/");
+  const [inDoc, setInDoc] = useState(isInDoc());
+
+  useEffect(() => {
+    setInDoc(isInDoc());
+  }, [window.location.pathname]);
 
   return (
     <Box

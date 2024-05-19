@@ -1,16 +1,12 @@
 import { Box, Flex, Group, Text, Title } from "@mantine/core";
 import { Link } from "react-router-dom";
-import { TablerIcon } from "../../utils/types";
+import { DocumentSectionType } from "../../utils/types";
 
 export default function DocumentSectionBox({
   title,
   icon: IconComponent,
   documents,
-}: {
-  title: string;
-  icon: TablerIcon;
-  documents: { title: string; readable_id: string }[];
-}) {
+}: DocumentSectionType) {
   return (
     <Box id={title.toLowerCase().replaceAll(" ", "-")}>
       <Group gap="xs" mb="md">

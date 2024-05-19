@@ -1,16 +1,12 @@
 import { Avatar, Box, Center, Flex, Text, Title } from "@mantine/core";
+import { TesimonialType } from "../../utils/types";
 
 export default function TestimonialBox({
   avatar,
   name,
   position,
   review,
-}: {
-  avatar: string;
-  name: string;
-  position: string;
-  review: string;
-}) {
+}: TesimonialType) {
   return (
     <Box
       bg="#111111"

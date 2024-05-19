@@ -1,6 +1,7 @@
 import { Accordion, Container, Text, Title } from "@mantine/core";
+import { FAQType } from "../../../utils/types";
 
-const faqs: { value: string; question: string; answer: string }[] = [
+const faqs: FAQType[] = [
   {
     value: "q1",
     question: "Can I cancel my subscription?",

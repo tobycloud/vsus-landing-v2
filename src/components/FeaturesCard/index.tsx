@@ -1,5 +1,5 @@
 import { Card, Text, rem } from "@mantine/core";
-import { TablerIcon } from "../../utils/types";
+import { FeatureType } from "../../utils/types";
 import classes from "./index.module.css";
 
 export default function FeaturesCard({
@@ -7,12 +7,7 @@ export default function FeaturesCard({
   icon: IconComponent,
   description,
   bg,
-}: {
-  title: string;
-  icon: TablerIcon;
-  description: string;
-  bg: string;
-}) {
+}: FeatureType) {
   return (
     <Card
       bg={bg}

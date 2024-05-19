@@ -1,18 +1,11 @@
 import { Box, Container, Flex, Grid, Text, Title } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import PricingBox from "../../../components/PricingBox";
+import { PricingBoxType } from "../../../utils/types";
 import { Dots } from "./Dots";
 import classes from "./index.module.css";
 
-const contentData: {
-  title: string;
-  topColor: string;
-  bottomColor: string;
-  borderColor: string;
-  price: string;
-  description: string;
-  features: string[];
-}[] = [
+const contentData: PricingBoxType[] = [
   {
     title: "Basic",
     topColor: "#0B8B00",

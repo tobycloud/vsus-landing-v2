@@ -1,9 +1,9 @@
 import { Box, Group, Text } from "@mantine/core";
 import { IconHelpHexagon, IconSocial } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
-import { TablerIcon } from "../../../../../utils/types";
+import { StillNeedHelpType } from "../../../../../utils/types";
 
-const contentData: { icon: TablerIcon; title: string; link: string }[] = [
+const contentData: StillNeedHelpType[] = [
   { icon: IconSocial, title: "Get help from the community", link: "" },
   { icon: IconHelpHexagon, title: "Contact support", link: "" },
 ];

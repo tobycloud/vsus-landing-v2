@@ -1,4 +1,4 @@
-export type LegalDocument = {
+export type PBDocument = {
   id: string;
   readable_id: string;
   title: string;

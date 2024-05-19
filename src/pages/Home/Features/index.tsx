@@ -5,14 +5,9 @@ import {
   IconDeviceDesktopAnalytics,
 } from "@tabler/icons-react";
 import FeaturesCard from "../../../components/FeaturesCard";
-import { TablerIcon } from "../../../utils/types";
+import { FeatureType } from "../../../utils/types";
 
-const contentData: {
-  title: string;
-  description: string;
-  icon: TablerIcon;
-  bg: string;
-}[] = [
+const contentData: FeatureType[] = [
   {
     title: "Spin Up Your Dev Machine",
     description:
