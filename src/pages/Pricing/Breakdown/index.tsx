@@ -41,7 +41,7 @@ export default function Breakdown() {
   return (
     <Box mt="xl3" mx="xl" visibleFrom="xs">
       <Title ta="center" order={2}>
-        Let we break it down for you
+        Let us break it down for you
       </Title>
       <Container
         size="lg"
