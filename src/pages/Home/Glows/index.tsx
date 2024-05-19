@@ -1,4 +1,4 @@
-import { Avatar, Box } from "@mantine/core";
+import { Box } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
 export default function Glows() {
@@ -7,41 +7,42 @@ export default function Glows() {
   return (
     <Box
       w="100vw"
-      style={{ position: "absolute", zIndex: "-999", overflowX: "clip" }}
+      style={{ position: "absolute", zIndex: "-1", overflowX: "clip" }}
     >
-      <Avatar
-        size={512}
-        variant="filled"
-        color="#004f88"
+      <Box
         style={{
-          transform: `translate(-100px, -200px)`,
+          transform: `translate3d(-100px, -200px, 0)`,
           filter: "blur(120px)",
+          backgroundColor: "#004f88",
+          width: "512px",
+          height: "512px",
+          borderRadius: "50%",
         }}
-      >
-        {" "}
-      </Avatar>
-      <Avatar
-        size={364}
-        variant="filled"
-        color="#04FFFF"
+      />
+      <Box
         style={{
-          transform: `translate(95vw, ${isMobile ? "20vh" : "-150px"})`,
+          transform: `translate3d(${isMobile ? "85vw" : "95vw"}, ${
+            isMobile ? "20vh" : "-150px"
+          }, 0)`,
           filter: "blur(120px)",
+          backgroundColor: "#004fff",
+          width: "364px",
+          height: "364px",
+          borderRadius: "50%",
         }}
-      >
-        {" "}
-      </Avatar>
-      <Avatar
-        size={425}
-        variant="filled"
-        color="#230088"
+      />
+      <Box
         style={{
-          transform: `translate(-300px, ${isMobile ? "60vh" : "-150px"})`,
+          transform: `translate3d(${isMobile ? "-150px" : "-300px"}, ${
+            isMobile ? "60vh" : "-150px"
+          }, 0)`,
           filter: "blur(180px)",
+          backgroundColor: "#230088",
+          width: "425px",
+          height: "425px",
+          borderRadius: "50%",
         }}
-      >
-        {" "}
-      </Avatar>
+      />
     </Box>
   );
 }
