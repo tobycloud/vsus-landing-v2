@@ -7,7 +7,7 @@ export default function Glows() {
   return (
     <Box
       w="100vw"
-      style={{ position: "absolute", zIndex: "-1", overflowX: "clip" }}
+      style={{ position: "absolute", zIndex: "-1", overflowX: "hidden" }}
     >
       <Box
         style={{
