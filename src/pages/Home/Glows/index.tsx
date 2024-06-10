@@ -9,6 +9,7 @@ export default function Glows() {
       w="100vw"
       style={{ position: "absolute", zIndex: "-1", overflowX: "hidden" }}
       mt={-77}
+      mih="3000px" // just a large number to ensure the background is covered
     >
       <Box
         style={{
