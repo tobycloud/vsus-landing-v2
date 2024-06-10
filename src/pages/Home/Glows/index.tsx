@@ -8,6 +8,7 @@ export default function Glows() {
     <Box
       w="100vw"
       style={{ position: "absolute", zIndex: "-1", overflowX: "hidden" }}
+      mt={-77}
     >
       <Box
         style={{
