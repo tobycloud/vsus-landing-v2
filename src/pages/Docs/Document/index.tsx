@@ -16,23 +16,28 @@ import DocumentSectionNavlinks from "../../../components/DocumentSectionNavlinks
 import { monthsKey } from "../../../utils";
 import { FetchedDocumentType } from "../../../utils/types";
 import { Error404 } from "../../Errors/404";
+import { handleAnchorClicks, handleScrollToHash } from "./utils";
 
 export default function Document() {
-  const { document, sectionTitle } = useLoaderData() as FetchedDocumentType;
+  const { document: fetchedDocument, sectionTitle } =
+    useLoaderData() as FetchedDocumentType;
 
   const isMobile = useMediaQuery("(max-width: 75em)");
 
   const [opened, { toggle }] = useDisclosure();
 
   const breadcumbLinks =
-    document &&
+    fetchedDocument &&
     [
       { title: "Docs", href: "/docs" },
       {
         title: sectionTitle,
         href: `/docs#${sectionTitle.toLowerCase().replace(" ", "-")}`,
       },
-      { title: document.title, href: `/docs/${document.readable_id}` },
+      {
+        title: fetchedDocument.title,
+        href: `/docs/${fetchedDocument.readable_id}`,
+      },
     ].map((item, index) => (
       <Text component={Link} to={item.href} key={index} c="white" fz="sm">
         {item.title}
@@ -43,10 +48,21 @@ export default function Document() {
     if (!isMobile && opened) toggle();
   }, [isMobile, opened, toggle]);
 
+  useEffect(() => {
+    if (document) {
+      handleScrollToHash(isMobile);
+      setTimeout(() => {
+        return handleAnchorClicks(isMobile);
+      }, 200);
+    }
+  }, [isMobile]);
+
   return (
     <>
       <Helmet>
-        <title>{document ? document.title : "Not Found"} - Docs - vSuS</title>
+        <title>
+          {fetchedDocument ? fetchedDocument.title : "Not Found"} - Docs - vSuS
+        </title>
       </Helmet>
       <Flex direction={isMobile ? "column" : "row"}>
         <Box
@@ -78,8 +94,10 @@ export default function Document() {
         >
           <Group>
             <Burger opened={opened} onClick={toggle} size="sm" />
-            <Breadcrumbs hidden={!document}>{breadcumbLinks}</Breadcrumbs>
-            <Text hidden={!!document} fz="sm">
+            <Breadcrumbs hidden={!fetchedDocument}>
+              {breadcumbLinks}
+            </Breadcrumbs>
+            <Text hidden={!!fetchedDocument} fz="sm">
               Document not found
             </Text>
           </Group>
@@ -91,36 +109,42 @@ export default function Document() {
           mx={{ base: "xl", lg: "auto" }}
           maw={isMobile ? "max-content" : "59em"}
         >
-          {document ? (
-            <>
-              <Title mb="md">{document.title}</Title>
+          {fetchedDocument ? (
+            <Box>
+              <Title mb="md">{fetchedDocument.title}</Title>
               <Text mb="sm">
-                Effective Date: {document.created.slice(8, 10)}{" "}
+                Effective Date: {fetchedDocument.created.slice(8, 10)}{" "}
                 {
                   monthsKey[
-                    document.created.slice(5, 7) as keyof typeof monthsKey
+                    fetchedDocument.created.slice(
+                      5,
+                      7
+                    ) as keyof typeof monthsKey
                   ]
                 }{" "}
-                {document.created.slice(0, 4)}
+                {fetchedDocument.created.slice(0, 4)}
               </Text>
               <Text mb="xl">
-                Last Updated: {document.updated.slice(8, 10)}{" "}
+                Last Updated: {fetchedDocument.updated.slice(8, 10)}{" "}
                 {
                   monthsKey[
-                    document.updated.slice(5, 7) as keyof typeof monthsKey
+                    fetchedDocument.updated.slice(
+                      5,
+                      7
+                    ) as keyof typeof monthsKey
                   ]
                 }{" "}
-                {document.updated.slice(0, 4)}
+                {fetchedDocument.updated.slice(0, 4)}
               </Text>
               <Box
                 dangerouslySetInnerHTML={{
-                  __html: document.content.replace(
+                  __html: fetchedDocument.content.replace(
                     /<a\b([^>]+)>/g,
                     "<a style='color: white;' $1>"
                   ),
                 }}
               />
-            </>
+            </Box>
           ) : (
             <Error404 />
           )}
