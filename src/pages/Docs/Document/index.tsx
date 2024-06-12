@@ -16,7 +16,7 @@ import DocumentSectionNavlinks from "../../../components/DocumentSectionNavlinks
 import { monthsKey } from "../../../utils";
 import { FetchedDocumentType } from "../../../utils/types";
 import { Error404 } from "../../Errors/404";
-import { handleAnchorClicks } from "./utils";
+import { handleAnchorClicks, handleScrollToHash } from "./utils";
 
 export default function Document() {
   const { document: fetchedDocument, sectionTitle } =
@@ -50,9 +50,10 @@ export default function Document() {
 
   useEffect(() => {
     if (document) {
+      handleScrollToHash(isMobile);
       setTimeout(() => {
         return handleAnchorClicks(isMobile);
-      }, 100);
+      }, 200);
     }
   }, [isMobile]);
 
